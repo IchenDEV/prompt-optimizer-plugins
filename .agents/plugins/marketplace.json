@@ -1,0 +1,20 @@
+{
+  "name": "optimize-gpt-5-6-prompts",
+  "interface": {
+    "displayName": "GPT-5.6 Prompt Tools"
+  },
+  "plugins": [
+    {
+      "name": "optimize-gpt-5-6-prompts",
+      "source": {
+        "source": "local",
+        "path": "./plugins/optimize-gpt-5-6-prompts"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
