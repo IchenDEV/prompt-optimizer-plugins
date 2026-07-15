@@ -1,19 +1,20 @@
 {
   "name": "optimize-gpt-5-6-prompts",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Clarify and optimize prompts for GPT-5.6 using official OpenAI guidance.",
   "author": {
     "name": "IchenDEV",
     "url": "https://github.com/IchenDEV"
   },
-  "homepage": "https://github.com/IchenDEV/optimize-gpt-5-6-prompts",
-  "repository": "https://github.com/IchenDEV/optimize-gpt-5-6-prompts",
+  "homepage": "https://github.com/IchenDEV/prompt-optimizer-plugins",
+  "repository": "https://github.com/IchenDEV/prompt-optimizer-plugins",
   "license": "MIT",
   "keywords": [
     "gpt-5.6",
     "prompt-optimization",
     "prompt-engineering",
-    "codex-skill"
+    "codex-skill",
+    "claude-code-plugin"
   ],
   "skills": "./skills/",
   "interface": {

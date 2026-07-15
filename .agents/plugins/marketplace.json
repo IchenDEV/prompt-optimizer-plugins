@@ -1,7 +1,7 @@
 {
   "name": "optimize-gpt-5-6-prompts",
   "interface": {
-    "displayName": "GPT-5.6 Prompt Tools"
+    "displayName": "Prompt Optimizer Plugins"
   },
   "plugins": [
     {
@@ -9,6 +9,18 @@
       "source": {
         "source": "local",
         "path": "./plugins/optimize-gpt-5-6-prompts"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "claude-fable-5-prompt-optimizer",
+      "source": {
+        "source": "local",
+        "path": "./plugins/claude-fable-5-prompt-optimizer"
       },
       "policy": {
         "installation": "AVAILABLE",

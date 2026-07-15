@@ -1,65 +1,96 @@
-# GPT-5.6 Prompt Optimizer
+# Prompt Optimizer Plugins
 
-A Codex plugin that turns rough ideas and existing prompts into lean, outcome-first prompts for GPT-5.6. It follows OpenAI's current GPT-5.6 prompting guidance and asks targeted questions when missing information would materially change the result.
+A dual-protocol marketplace containing focused prompt optimizers for GPT-5.6 and Claude Fable 5. The same Skill files are packaged for both Codex and Claude Code, so behavior stays consistent across the two runtimes.
 
-## Install
+## Included plugins
 
-Add this GitHub repository as a Codex plugin marketplace, then install the plugin:
+| Plugin | Target | Codex Skill | Claude Code Skill |
+| --- | --- | --- | --- |
+| `optimize-gpt-5-6-prompts` | GPT-5.6 | `$optimize-gpt-5-6-prompts` | `/optimize-gpt-5-6-prompts:optimize-gpt-5-6-prompts` |
+| `claude-fable-5-prompt-optimizer` | Claude Fable 5 | `$optimize-claude-fable-5-prompts` | `/claude-fable-5-prompt-optimizer:optimize-claude-fable-5-prompts` |
+
+Both optimizers preserve explicit requirements, ask targeted questions when missing information would materially change the result, and keep runtime configuration separate from prompt text.
+
+## Install with Codex
+
+Add the marketplace once:
 
 ```bash
-codex plugin marketplace add IchenDEV/optimize-gpt-5-6-prompts
+codex plugin marketplace add IchenDEV/prompt-optimizer-plugins
+```
+
+Install either or both plugins:
+
+```bash
 codex plugin add optimize-gpt-5-6-prompts@optimize-gpt-5-6-prompts
+codex plugin add claude-fable-5-prompt-optimizer@optimize-gpt-5-6-prompts
 ```
 
-If the plugin does not appear immediately, restart Codex.
+The Codex marketplace ID remains `optimize-gpt-5-6-prompts` so existing GPT-only installations can continue to upgrade after the repository rename.
 
-## Use
+## Install with Claude Code
 
-Invoke the bundled skill explicitly:
+Add the same GitHub marketplace:
+
+```bash
+claude plugin marketplace add IchenDEV/prompt-optimizer-plugins
+```
+
+Install either or both plugins:
+
+```bash
+claude plugin install optimize-gpt-5-6-prompts@prompt-optimizer-plugins
+claude plugin install claude-fable-5-prompt-optimizer@prompt-optimizer-plugins
+```
+
+Claude Code namespaces plugin skills with the plugin name. Use the full slash-command names shown in the table above.
+
+## What the optimizers do
+
+- Preserve the original goal, facts, constraints, output contract, and prompt-layer boundaries.
+- Ask one to three focused questions when outcome, input, evidence, schema, or permission boundaries are materially unclear.
+- Avoid producing a provisional prompt while blocking information is missing.
+- Rewrite clear requests into direct prompts suited to the target model.
+- Define assessment versus implementation, authorization boundaries, evidence, verification, and completion where relevant.
+- Replace requests for hidden chain of thought with concise rationale, supporting evidence, and checks.
+- Use complex structure only when it improves behavior.
+
+## Dual-protocol layout
 
 ```text
-$optimize-gpt-5-6-prompts Optimize this prompt for GPT-5.6: ...
+.agents/plugins/marketplace.json         # Codex marketplace
+.claude-plugin/marketplace.json          # Claude Code marketplace
+plugins/
+├── optimize-gpt-5-6-prompts/
+│   ├── .codex-plugin/plugin.json
+│   ├── .claude-plugin/plugin.json
+│   └── skills/optimize-gpt-5-6-prompts/
+└── claude-fable-5-prompt-optimizer/
+    ├── .codex-plugin/plugin.json
+    ├── .claude-plugin/plugin.json
+    └── skills/optimize-claude-fable-5-prompts/
 ```
 
-The skill also supports Chinese requests:
-
-```text
-$optimize-gpt-5-6-prompts 优化下面的 GPT-5.6 提示词：……
-```
-
-## What it does
-
-- Preserves the original goal, facts, constraints, output contract, and prompt-layer boundaries.
-- Removes repetition, contradictions, obsolete scaffolding, and irrelevant instructions.
-- Rewrites toward explicit outcomes, completion criteria, evidence, validation, and stop rules.
-- Asks one to three focused questions when the goal, input, output, evidence, or permission boundary is materially unclear.
-- Stops before assuming authority for external, destructive, costly, or scope-expanding actions.
-- Keeps API reasoning settings separate from prompt text.
-
-## Distribution structure
-
-This repository follows OpenAI's plugin distribution layout:
-
-```text
-.agents/plugins/marketplace.json
-plugins/optimize-gpt-5-6-prompts/
-├── .codex-plugin/plugin.json
-└── skills/optimize-gpt-5-6-prompts/
-    ├── SKILL.md
-    ├── agents/openai.yaml
-    └── references/official-guidance.md
-```
+Each plugin owns its Skill directory. Nothing depends on paths outside the plugin root, so both runtimes can safely copy plugins into their versioned caches.
 
 ## Validation
 
-The skill was iterated through three rounds of independent forward tests. The first round exposed over-assumption in underspecified prompts; after tightening the clarification gate, all six independent cases in the next two rounds passed. The published package also passes the OpenAI Skill and Plugin validators.
+The repository is checked with:
+
+- the Codex Plugin validator for both plugins;
+- the Codex Skill validator for both skills;
+- `claude plugin validate` for the marketplace and both plugins;
+- clean-environment installation tests for both Codex and Claude Code;
+- representative forward tests for clarification, prompt-only output, external actions, long-running work, hidden-reasoning requests, and long-document question answering.
 
 ## Official sources
 
-- [Build skills](https://learn.chatgpt.com/docs/build-skills)
-- [Build plugins](https://learn.chatgpt.com/docs/build-plugins)
+- [Codex: build skills](https://learn.chatgpt.com/docs/build-skills)
+- [Codex: build plugins](https://learn.chatgpt.com/docs/build-plugins)
+- [Claude Code: create plugins](https://code.claude.com/docs/en/plugins)
+- [Claude Code: create a plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces)
+- [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5)
 - [Using GPT-5.6](https://developers.openai.com/api/docs/guides/latest-model)
-- [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/docs/guides/prompt-guidance-gpt-5p6)
 
 ## License
 

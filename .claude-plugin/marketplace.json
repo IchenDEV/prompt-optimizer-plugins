@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "prompt-optimizer-plugins",
+  "version": "2.0.0",
+  "description": "Prompt optimization plugins for GPT-5.6 and Claude Fable 5.",
+  "owner": {
+    "name": "IchenDEV"
+  },
+  "plugins": [
+    {
+      "name": "optimize-gpt-5-6-prompts",
+      "source": "./plugins/optimize-gpt-5-6-prompts",
+      "description": "Clarify and optimize prompts for GPT-5.6 using official OpenAI guidance.",
+      "category": "productivity",
+      "tags": [
+        "gpt-5.6",
+        "prompt-engineering",
+        "prompt-optimization"
+      ]
+    },
+    {
+      "name": "claude-fable-5-prompt-optimizer",
+      "source": "./plugins/claude-fable-5-prompt-optimizer",
+      "description": "Clarify and optimize prompts for Claude Fable 5 using official Anthropic guidance.",
+      "category": "productivity",
+      "tags": [
+        "claude-fable-5",
+        "prompt-engineering",
+        "prompt-optimization"
+      ]
+    }
+  ]
+}
