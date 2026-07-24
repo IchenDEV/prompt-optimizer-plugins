@@ -1,0 +1,19 @@
+{
+  "name": "claude-opus-5-prompt-optimizer",
+  "displayName": "Claude Opus 5 Prompt Optimizer",
+  "version": "1.0.0",
+  "description": "Clarify and optimize prompts for Claude Opus 5 using official Anthropic guidance.",
+  "author": {
+    "name": "IchenDEV",
+    "url": "https://github.com/IchenDEV"
+  },
+  "homepage": "https://github.com/IchenDEV/prompt-optimizer-plugins",
+  "repository": "https://github.com/IchenDEV/prompt-optimizer-plugins",
+  "license": "MIT",
+  "keywords": [
+    "claude-opus-5",
+    "prompt-optimization",
+    "prompt-engineering"
+  ],
+  "skills": "./skills/"
+}

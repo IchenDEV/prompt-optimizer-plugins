@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.0
+
+- Merged the Claude Opus 5 prompt optimizer in from the standalone `skil` marketplace.
+- Registered `claude-opus-5-prompt-optimizer` in both the Codex and Claude Code marketplaces.
+- Aligned the merged plugin's author, homepage, and repository metadata with the other plugins.
+
 ## 2.0.0
 
 - Renamed the repository to `prompt-optimizer-plugins`.
