@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kimi Prompt Optimizer"
+  short_description: "Clarify and optimize prompts for Kimi"
+  default_prompt: "Use $optimize-kimi-prompts to clarify and optimize this prompt for Kimi."

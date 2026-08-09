@@ -1,38 +1,14 @@
 {
   "name": "optimize-gpt-5-6-prompts",
   "interface": {
-    "displayName": "Prompt Optimizer Plugins"
+    "displayName": "Prompt Optimizer"
   },
   "plugins": [
     {
-      "name": "optimize-gpt-5-6-prompts",
+      "name": "prompt-optimizer",
       "source": {
         "source": "local",
-        "path": "./plugins/optimize-gpt-5-6-prompts"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
-      "name": "claude-fable-5-prompt-optimizer",
-      "source": {
-        "source": "local",
-        "path": "./plugins/claude-fable-5-prompt-optimizer"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
-      "name": "claude-opus-5-prompt-optimizer",
-      "source": {
-        "source": "local",
-        "path": "./plugins/claude-opus-5-prompt-optimizer"
+        "path": "./plugins/prompt-optimizer"
       },
       "policy": {
         "installation": "AVAILABLE",

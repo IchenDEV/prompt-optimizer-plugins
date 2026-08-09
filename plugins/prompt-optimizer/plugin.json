@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "prompt-optimizer",
+  "version": "3.0.0",
+  "description": "Clarify and optimize prompts for GPT-5.6, Claude, Kimi, GLM, and DeepSeek-V4.",
+  "author": {
+    "name": "IchenDEV",
+    "url": "https://github.com/IchenDEV"
+  },
+  "homepage": "https://github.com/IchenDEV/prompt-optimizer-plugins",
+  "repository": "https://github.com/IchenDEV/prompt-optimizer-plugins",
+  "license": "MIT",
+  "keywords": [
+    "prompt-optimization",
+    "prompt-engineering",
+    "gpt-5.6",
+    "claude",
+    "kimi",
+    "glm",
+    "deepseek-v4",
+    "agent-plugin",
+    "agent-skill"
+  ]
+}
