@@ -1,8 +1,8 @@
 {
-  "name": "optimize-gpt-5-6-prompts",
-  "displayName": "GPT-5.6 Prompt Optimizer",
-  "version": "1.2.0",
-  "description": "Clarify and optimize prompts for GPT-5.6 using official OpenAI guidance.",
+  "name": "prompt-optimizer",
+  "displayName": "Prompt Optimizer",
+  "version": "3.0.0",
+  "description": "Clarify and optimize prompts for GPT-5.6, Claude, Kimi, GLM, and DeepSeek-V4.",
   "author": {
     "name": "IchenDEV",
     "url": "https://github.com/IchenDEV"
@@ -11,9 +11,13 @@
   "repository": "https://github.com/IchenDEV/prompt-optimizer-plugins",
   "license": "MIT",
   "keywords": [
-    "gpt-5.6",
     "prompt-optimization",
-    "prompt-engineering"
+    "prompt-engineering",
+    "gpt-5.6",
+    "claude",
+    "kimi",
+    "glm",
+    "deepseek-v4"
   ],
   "skills": "./skills/"
 }

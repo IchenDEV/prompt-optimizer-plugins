@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "claude-opus-5-prompt-optimizer",
-  "version": "1.1.0",
-  "description": "Clarify and optimize prompts for Claude Opus 5 using Anthropic's official guidance.",
+  "name": "prompt-optimizer",
+  "version": "3.0.0",
+  "description": "Clarify and optimize prompts for GPT-5.6, Claude, Kimi, GLM, and DeepSeek-V4.",
   "author": {
     "name": "IchenDEV",
     "url": "https://github.com/IchenDEV"
@@ -11,9 +11,13 @@
   "repository": "https://github.com/IchenDEV/prompt-optimizer-plugins",
   "license": "MIT",
   "keywords": [
-    "claude-opus-5",
     "prompt-optimization",
     "prompt-engineering",
+    "gpt-5.6",
+    "claude",
+    "kimi",
+    "glm",
+    "deepseek-v4",
     "agent-plugin",
     "agent-skill"
   ]

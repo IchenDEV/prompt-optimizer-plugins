@@ -1,0 +1,4 @@
+interface:
+  display_name: "GLM Prompt Optimizer"
+  short_description: "Clarify and optimize prompts for GLM"
+  default_prompt: "Use $optimize-glm-prompts to clarify and optimize this prompt for GLM."

@@ -1,22 +1,25 @@
-# Prompt Optimizer Plugins
+# Prompt Optimizer
 
-A portable [Agent Plugins 1.0](https://agent-plugins.org/) collection and native marketplace for Codex and Claude Code. It contains focused prompt optimizers for GPT-5.6, Claude Fable 5, and Claude Opus 5. Every supported client discovers the same Agent Skill files, so behavior stays consistent across runtimes.
+One portable [Agent Plugins 1.0](https://agent-plugins.org/) package with six model-specific prompt-optimization skills. The same skills work through the portable package, Codex marketplace, and Claude Code marketplace.
 
-## Included plugins
+## Included skills
 
-| Plugin | Target | Agent Plugins package | Codex Skill | Claude Code Skill |
-| --- | --- | --- | --- | --- |
-| `optimize-gpt-5-6-prompts` | GPT-5.6 | `plugins/optimize-gpt-5-6-prompts` | `$optimize-gpt-5-6-prompts` | `/optimize-gpt-5-6-prompts:optimize-gpt-5-6-prompts` |
-| `claude-fable-5-prompt-optimizer` | Claude Fable 5 | `plugins/claude-fable-5-prompt-optimizer` | `$optimize-claude-fable-5-prompts` | `/claude-fable-5-prompt-optimizer:optimize-claude-fable-5-prompts` |
-| `claude-opus-5-prompt-optimizer` | Claude Opus 5 | `plugins/claude-opus-5-prompt-optimizer` | `$optimize-claude-opus-5-prompts` | `/claude-opus-5-prompt-optimizer:optimize-claude-opus-5-prompts` |
+| Target | Skill | Codex | Claude Code |
+| --- | --- | --- | --- |
+| GPT-5.6 | `optimize-gpt-5-6-prompts` | `$optimize-gpt-5-6-prompts` | `/prompt-optimizer:optimize-gpt-5-6-prompts` |
+| Claude Fable 5 | `optimize-claude-fable-5-prompts` | `$optimize-claude-fable-5-prompts` | `/prompt-optimizer:optimize-claude-fable-5-prompts` |
+| Claude Opus 5 | `optimize-claude-opus-5-prompts` | `$optimize-claude-opus-5-prompts` | `/prompt-optimizer:optimize-claude-opus-5-prompts` |
+| Kimi | `optimize-kimi-prompts` | `$optimize-kimi-prompts` | `/prompt-optimizer:optimize-kimi-prompts` |
+| GLM | `optimize-glm-prompts` | `$optimize-glm-prompts` | `/prompt-optimizer:optimize-glm-prompts` |
+| DeepSeek-V4 | `optimize-deepseek-v4-prompts` | `$optimize-deepseek-v4-prompts` | `/prompt-optimizer:optimize-deepseek-v4-prompts` |
 
-Every optimizer preserves explicit requirements, asks targeted questions when missing information would materially change the result, and keeps runtime configuration separate from prompt text.
+Every skill preserves explicit requirements, asks targeted questions only when missing information would materially change the result, and keeps runtime configuration separate from prompt text.
 
 ## Use with an Agent Plugins client
 
-Clone or download this repository, then import the directory for the optimizer you want from the `plugins/` folder. Each directory is a self-contained Agent Plugins 1.0 package with a root `plugin.json` and skills at the fixed `skills/<skill-name>/SKILL.md` location.
+Clone or download this repository, then import `plugins/prompt-optimizer`. It is one self-contained Agent Plugins 1.0 package with a root `plugin.json` and six immediate children under `skills/`.
 
-Agent Plugins deliberately leaves installation and distribution to each client. Follow your client's local-directory or repository import instructions and select one of the package paths in the table above. See the [compatible clients list](https://agent-plugins.org/compatible-clients) for current client support.
+Agent Plugins leaves installation and distribution to each client. See the [compatible clients list](https://agent-plugins.org/compatible-clients) and follow your client's local-directory or repository import instructions.
 
 ## Install with Codex
 
@@ -26,108 +29,78 @@ Add the marketplace once:
 codex plugin marketplace add IchenDEV/prompt-optimizer-plugins
 ```
 
-Install any subset of the plugins:
+Install the single plugin:
 
 ```bash
-codex plugin add optimize-gpt-5-6-prompts@optimize-gpt-5-6-prompts
-codex plugin add claude-fable-5-prompt-optimizer@optimize-gpt-5-6-prompts
-codex plugin add claude-opus-5-prompt-optimizer@optimize-gpt-5-6-prompts
+codex plugin add prompt-optimizer@optimize-gpt-5-6-prompts
 ```
 
-The Codex marketplace ID remains `optimize-gpt-5-6-prompts` so existing GPT-only installations can continue to upgrade after the repository rename.
+The Codex marketplace ID remains `optimize-gpt-5-6-prompts` so existing marketplace registrations do not need to change.
 
 ## Install with Claude Code
 
-Add the same GitHub marketplace:
+Add the marketplace and install the single plugin:
 
 ```bash
 claude plugin marketplace add IchenDEV/prompt-optimizer-plugins
+claude plugin install prompt-optimizer@prompt-optimizer-plugins
 ```
 
-Install any subset of the plugins:
+Claude Code namespaces every bundled skill with the single plugin name `prompt-optimizer`.
 
-```bash
-claude plugin install optimize-gpt-5-6-prompts@prompt-optimizer-plugins
-claude plugin install claude-fable-5-prompt-optimizer@prompt-optimizer-plugins
-claude plugin install claude-opus-5-prompt-optimizer@prompt-optimizer-plugins
-```
+## Version 3 migration
 
-Claude Code namespaces plugin skills with the plugin name. Use the full slash-command names shown in the table above.
+Version 3 replaces the previous one-plugin-per-model layout. Existing users should uninstall the old model-specific plugins and install `prompt-optimizer`. The six skill names are unchanged, so Codex invocations continue to use the same `$skill-name` values; Claude Code invocations now use the `prompt-optimizer:` namespace shown above.
 
-## What the optimizers do
+## Model-specific behavior
 
-- Preserve the original goal, facts, constraints, output contract, and prompt-layer boundaries.
-- Ask one to three focused questions when outcome, input, evidence, schema, or permission boundaries are materially unclear.
-- Avoid producing a provisional prompt while blocking information is missing.
-- Rewrite clear requests into direct prompts suited to the target model.
-- Define assessment versus implementation, authorization boundaries, evidence, verification, and completion where relevant.
-- Replace requests for hidden chain of thought with concise rationale, supporting evidence, and checks.
-- Use complex structure only when it improves behavior.
+- **GPT-5.6:** produces lean, outcome-first prompts grounded in OpenAI guidance.
+- **Claude Fable 5:** uses context-rich prompting and targeted clarification grounded in Anthropic guidance.
+- **Claude Opus 5:** optimizes subtractively, removing scaffolding the model no longer needs and adding only observed-behavior controls.
+- **Kimi:** emphasizes concrete context, input delimiters, reference-grounded fallbacks, and staged handling of long inputs.
+- **GLM:** preserves system/user boundaries and uses parseable output contracts, references, examples, and decomposition where needed.
+- **DeepSeek-V4:** keeps reasoning modes, special tokens, and tool protocols outside ordinary prompt prose, with explicit evidence boundaries.
 
-### What the Claude Opus 5 optimizer does differently
-
-Opus 5 runs Claude Opus 4.8 prompts well out of the box, so that skill treats optimization as mostly subtractive:
-
-1. **Subtract first.** Remove verification and re-check instructions, verifier subagents, "don't think" rules, conservative review filters, and legacy scaffolding — Opus 5 already self-verifies and self-corrects, and these instructions compound into wasted tokens.
-2. **Tune only observed behavior.** One targeted block per symptom: long responses, heavy agentic narration, padded written deliverables, scope expansion, eager subagent delegation, correction narration, thinking-disabled output artifacts.
-3. **Keep runtime settings out of the prompt.** Effort, `max_tokens`, thinking, retries, and fallbacks belong in the request, not the prompt text.
-
-Its reference material lives in `plugins/claude-opus-5-prompt-optimizer/skills/optimize-claude-opus-5-prompts/references/`:
-
-- `official-guidance.md` — dated working summary of the official docs, with canonical URLs.
-- `snippets.md` — copy-ready instruction blocks from Anthropic's guide, one per behavior.
-
-## Portable and client-native layout
+## Layout
 
 ```text
-.agents/plugins/marketplace.json         # Codex marketplace
-.claude-plugin/marketplace.json          # Claude Code marketplace
-plugins/
-├── optimize-gpt-5-6-prompts/
-│   ├── plugin.json                       # Agent Plugins 1.0
-│   ├── .codex-plugin/plugin.json
-│   ├── .claude-plugin/plugin.json
-│   └── skills/optimize-gpt-5-6-prompts/
-├── claude-fable-5-prompt-optimizer/
-│   ├── plugin.json                       # Agent Plugins 1.0
-│   ├── .codex-plugin/plugin.json
-│   ├── .claude-plugin/plugin.json
-│   └── skills/optimize-claude-fable-5-prompts/
-└── claude-opus-5-prompt-optimizer/
-    ├── plugin.json                       # Agent Plugins 1.0
-    ├── .codex-plugin/plugin.json
-    ├── .claude-plugin/plugin.json
-    └── skills/optimize-claude-opus-5-prompts/
+.agents/plugins/marketplace.json         # Codex marketplace, one entry
+.claude-plugin/marketplace.json          # Claude Code marketplace, one entry
+plugins/prompt-optimizer/
+├── plugin.json                          # Agent Plugins 1.0
+├── .codex-plugin/plugin.json
+├── .claude-plugin/plugin.json
+└── skills/
+    ├── optimize-gpt-5-6-prompts/
+    ├── optimize-claude-fable-5-prompts/
+    ├── optimize-claude-opus-5-prompts/
+    ├── optimize-kimi-prompts/
+    ├── optimize-glm-prompts/
+    └── optimize-deepseek-v4-prompts/
 ```
 
-Each plugin owns its Skill directory. Nothing depends on paths outside the plugin root, so portable clients and the native Codex and Claude Code loaders can safely copy plugins into their caches. The client-specific manifests remain additive compatibility files; they do not replace or override the portable root manifest.
+Nothing depends on paths outside the plugin root, so portable clients and native Codex and Claude Code loaders can copy the package safely.
 
 ## Validation
 
 The repository is checked with:
 
-- the official Agent Plugins 1.0 JSON Schema for every root `plugin.json`;
-- the Agent Skills reference validator for every skill;
-- the Codex Plugin validator for every plugin;
-- the Codex Skill validator for every skill;
-- `claude plugin validate` for the marketplace and every plugin;
-- clean-environment installation tests for both Codex and Claude Code;
-- representative forward tests for clarification, prompt-only output, external actions, long-running work, hidden-reasoning requests, and long-document question answering.
+- the official Agent Plugins 1.0 JSON Schema for the portable manifest;
+- the Agent Skills reference validator for all six skills;
+- the Codex Plugin and Skill validators;
+- `claude plugin validate` for the marketplace and plugin;
+- `git diff --check` and manifest/version consistency checks.
 
 ## Official sources
 
 - [Agent Plugins specification](https://agent-plugins.org/specification)
-- [Agent Plugins author guide](https://agent-plugins.org/plugin-authors)
 - [Agent Skills specification](https://agentskills.io/specification)
-- [Codex: build skills](https://learn.chatgpt.com/docs/build-skills)
-- [Codex: build plugins](https://learn.chatgpt.com/docs/build-plugins)
-- [Claude Code: create plugins](https://code.claude.com/docs/en/plugins)
-- [Claude Code: create a plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces)
+- [Using GPT-5.6](https://developers.openai.com/api/docs/guides/latest-model)
 - [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5)
 - [Prompting Claude Opus 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5)
-- [What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5)
-- [Effort](https://platform.claude.com/docs/en/build-with-claude/effort)
-- [Using GPT-5.6](https://developers.openai.com/api/docs/guides/latest-model)
+- [Kimi API: Prompt best practices](https://platform.kimi.com/docs/guide/prompt-best-practice)
+- [Zhipu AI: Prompt engineering](https://docs.bigmodel.cn/cn/guide/platform/prompt)
+- [DeepSeek-V4 technical report](https://arxiv.org/abs/2606.19348)
 
 ## License
 

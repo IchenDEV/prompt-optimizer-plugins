@@ -1,0 +1,4 @@
+interface:
+  display_name: "DeepSeek-V4 Prompt Optimizer"
+  short_description: "Clarify and optimize prompts for DeepSeek-V4"
+  default_prompt: "Use $optimize-deepseek-v4-prompts to clarify and optimize this prompt for DeepSeek-V4."

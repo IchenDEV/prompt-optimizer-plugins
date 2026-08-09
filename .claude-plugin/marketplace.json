@@ -1,43 +1,25 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "prompt-optimizer-plugins",
-  "version": "2.2.0",
-  "description": "Prompt optimization plugins for GPT-5.6, Claude Fable 5, and Claude Opus 5.",
+  "version": "3.0.0",
+  "description": "One prompt optimizer plugin for GPT-5.6, Claude, Kimi, GLM, and DeepSeek-V4.",
   "owner": {
     "name": "IchenDEV"
   },
   "plugins": [
     {
-      "name": "optimize-gpt-5-6-prompts",
-      "source": "./plugins/optimize-gpt-5-6-prompts",
-      "description": "Clarify and optimize prompts for GPT-5.6 using official OpenAI guidance.",
+      "name": "prompt-optimizer",
+      "source": "./plugins/prompt-optimizer",
+      "description": "Clarify and optimize prompts with six model-specific Agent Skills.",
       "category": "productivity",
       "tags": [
+        "prompt-engineering",
+        "prompt-optimization",
         "gpt-5.6",
-        "prompt-engineering",
-        "prompt-optimization"
-      ]
-    },
-    {
-      "name": "claude-fable-5-prompt-optimizer",
-      "source": "./plugins/claude-fable-5-prompt-optimizer",
-      "description": "Clarify and optimize prompts for Claude Fable 5 using official Anthropic guidance.",
-      "category": "productivity",
-      "tags": [
-        "claude-fable-5",
-        "prompt-engineering",
-        "prompt-optimization"
-      ]
-    },
-    {
-      "name": "claude-opus-5-prompt-optimizer",
-      "source": "./plugins/claude-opus-5-prompt-optimizer",
-      "description": "Clarify and optimize prompts for Claude Opus 5 using official Anthropic guidance.",
-      "category": "productivity",
-      "tags": [
-        "claude-opus-5",
-        "prompt-engineering",
-        "prompt-optimization"
+        "claude",
+        "kimi",
+        "glm",
+        "deepseek-v4"
       ]
     }
   ]

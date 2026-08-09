@@ -1,0 +1,39 @@
+{
+  "name": "prompt-optimizer",
+  "version": "3.0.0",
+  "description": "Clarify and optimize prompts for GPT-5.6, Claude, Kimi, GLM, and DeepSeek-V4.",
+  "author": {
+    "name": "IchenDEV",
+    "url": "https://github.com/IchenDEV"
+  },
+  "homepage": "https://github.com/IchenDEV/prompt-optimizer-plugins",
+  "repository": "https://github.com/IchenDEV/prompt-optimizer-plugins",
+  "license": "MIT",
+  "keywords": [
+    "prompt-optimization",
+    "prompt-engineering",
+    "gpt-5.6",
+    "claude",
+    "kimi",
+    "glm",
+    "deepseek-v4",
+    "agent-plugin",
+    "agent-skill"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Prompt Optimizer",
+    "shortDescription": "Six model-specific prompt optimizers in one plugin",
+    "longDescription": "Turn rough ideas or existing prompts into copy-ready prompts for GPT-5.6, Claude Fable 5, Claude Opus 5, Kimi, GLM, or DeepSeek-V4. Each bundled skill follows its model's evidence and prompting guidance.",
+    "developerName": "IchenDEV",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Optimize this prompt for the best-matching supported model.",
+      "Optimize this prompt for GPT-5.6.",
+      "把这段提示词优化成适合指定模型的版本。"
+    ]
+  }
+}

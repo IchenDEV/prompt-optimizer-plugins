@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.0.0
+
+- Consolidated all model optimizers into one `prompt-optimizer` plugin with six bundled Agent Skills.
+- Added Kimi, GLM, and DeepSeek-V4 skills alongside the existing GPT-5.6 and Claude skills.
+- Replaced the model-specific Codex and Claude Code marketplace entries with one installable plugin while keeping both marketplace IDs stable.
+- Added one portable Agent Plugins 1.0 package at `plugins/prompt-optimizer` and documented the version 3 migration.
+
 ## 2.2.0
 
 - Added a portable Agent Plugins 1.0 `plugin.json` to every plugin package.
