@@ -40,6 +40,8 @@ Treat these gaps as blocking by default:
 
 When clarification is blocking, ask one to three high-information questions and do not produce a provisional prompt. Otherwise proceed with conservative local assumptions and list only assumptions actually made. Never invent facts, sources, access, special-token support, or permissions.
 
+Use this calibration for market research: when a time-bounded market study asks for management recommendations but omits the target geography or the business decision and company context, ask for those missing dimensions before drafting. Do not silently substitute a global scope, choose focus countries, or invent company priorities. Tool availability need not block prompt drafting when the prompt can require real search and define a clear no-access fallback.
+
 ### 3. Rewrite for DeepSeek-V4
 
 Apply only changes supported by the task and evidence:
