@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.1.0
+
+- Added `optimize-gemini-prompts`, grounded in Google AI's official prompt design strategies.
+- Covered Gemini 3 structure, multimodal references, long-context ordering, few-shot examples, grounding, and runtime-setting separation.
+- Updated the portable, Codex, and Claude Code plugin metadata for seven bundled optimizers.
+
 ## 3.0.0
 
 - Consolidated all model optimizers into one `prompt-optimizer` plugin with six bundled Agent Skills.

@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "prompt-optimizer-plugins",
-  "version": "3.0.0",
-  "description": "One prompt optimizer plugin for GPT-5.6, Claude, Kimi, GLM, and DeepSeek-V4.",
+  "version": "3.1.0",
+  "description": "One prompt optimizer plugin for GPT-5.6, Claude, Gemini, Kimi, GLM, and DeepSeek-V4.",
   "owner": {
     "name": "IchenDEV"
   },
@@ -10,13 +10,14 @@
     {
       "name": "prompt-optimizer",
       "source": "./plugins/prompt-optimizer",
-      "description": "Clarify and optimize prompts with six model-specific Agent Skills.",
+      "description": "Clarify and optimize prompts with seven model-specific Agent Skills.",
       "category": "productivity",
       "tags": [
         "prompt-engineering",
         "prompt-optimization",
         "gpt-5.6",
         "claude",
+        "gemini",
         "kimi",
         "glm",
         "deepseek-v4"

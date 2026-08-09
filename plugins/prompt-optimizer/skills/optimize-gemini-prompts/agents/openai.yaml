@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gemini Prompt Optimizer"
+  short_description: "Clarify and optimize prompts for Gemini"
+  default_prompt: "Use $optimize-gemini-prompts to clarify and optimize this prompt for Gemini."
