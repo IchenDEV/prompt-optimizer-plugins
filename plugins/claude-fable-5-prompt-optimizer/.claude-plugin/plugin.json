@@ -1,7 +1,7 @@
 {
   "name": "claude-fable-5-prompt-optimizer",
   "displayName": "Claude Fable 5 Prompt Optimizer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Clarify and optimize prompts for Claude Fable 5 using official Anthropic guidance.",
   "author": {
     "name": "IchenDEV",

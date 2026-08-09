@@ -1,6 +1,6 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "optimize-gpt-5-6-prompts",
-  "displayName": "GPT-5.6 Prompt Optimizer",
   "version": "1.2.0",
   "description": "Clarify and optimize prompts for GPT-5.6 using official OpenAI guidance.",
   "author": {
@@ -13,7 +13,8 @@
   "keywords": [
     "gpt-5.6",
     "prompt-optimization",
-    "prompt-engineering"
-  ],
-  "skills": "./skills/"
+    "prompt-engineering",
+    "agent-plugin",
+    "agent-skill"
+  ]
 }

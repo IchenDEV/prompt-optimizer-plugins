@@ -1,6 +1,6 @@
 {
   "name": "optimize-gpt-5-6-prompts",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Clarify and optimize prompts for GPT-5.6 using official OpenAI guidance.",
   "author": {
     "name": "IchenDEV",

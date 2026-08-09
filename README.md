@@ -1,16 +1,22 @@
 # Prompt Optimizer Plugins
 
-A dual-protocol marketplace containing focused prompt optimizers for GPT-5.6, Claude Fable 5, and Claude Opus 5. The same Skill files are packaged for both Codex and Claude Code, so behavior stays consistent across the two runtimes.
+A portable [Agent Plugins 1.0](https://agent-plugins.org/) collection and native marketplace for Codex and Claude Code. It contains focused prompt optimizers for GPT-5.6, Claude Fable 5, and Claude Opus 5. Every supported client discovers the same Agent Skill files, so behavior stays consistent across runtimes.
 
 ## Included plugins
 
-| Plugin | Target | Codex Skill | Claude Code Skill |
-| --- | --- | --- | --- |
-| `optimize-gpt-5-6-prompts` | GPT-5.6 | `$optimize-gpt-5-6-prompts` | `/optimize-gpt-5-6-prompts:optimize-gpt-5-6-prompts` |
-| `claude-fable-5-prompt-optimizer` | Claude Fable 5 | `$optimize-claude-fable-5-prompts` | `/claude-fable-5-prompt-optimizer:optimize-claude-fable-5-prompts` |
-| `claude-opus-5-prompt-optimizer` | Claude Opus 5 | `$optimize-claude-opus-5-prompts` | `/claude-opus-5-prompt-optimizer:optimize-claude-opus-5-prompts` |
+| Plugin | Target | Agent Plugins package | Codex Skill | Claude Code Skill |
+| --- | --- | --- | --- | --- |
+| `optimize-gpt-5-6-prompts` | GPT-5.6 | `plugins/optimize-gpt-5-6-prompts` | `$optimize-gpt-5-6-prompts` | `/optimize-gpt-5-6-prompts:optimize-gpt-5-6-prompts` |
+| `claude-fable-5-prompt-optimizer` | Claude Fable 5 | `plugins/claude-fable-5-prompt-optimizer` | `$optimize-claude-fable-5-prompts` | `/claude-fable-5-prompt-optimizer:optimize-claude-fable-5-prompts` |
+| `claude-opus-5-prompt-optimizer` | Claude Opus 5 | `plugins/claude-opus-5-prompt-optimizer` | `$optimize-claude-opus-5-prompts` | `/claude-opus-5-prompt-optimizer:optimize-claude-opus-5-prompts` |
 
 Every optimizer preserves explicit requirements, asks targeted questions when missing information would materially change the result, and keeps runtime configuration separate from prompt text.
+
+## Use with an Agent Plugins client
+
+Clone or download this repository, then import the directory for the optimizer you want from the `plugins/` folder. Each directory is a self-contained Agent Plugins 1.0 package with a root `plugin.json` and skills at the fixed `skills/<skill-name>/SKILL.md` location.
+
+Agent Plugins deliberately leaves installation and distribution to each client. Follow your client's local-directory or repository import instructions and select one of the package paths in the table above. See the [compatible clients list](https://agent-plugins.org/compatible-clients) for current client support.
 
 ## Install with Codex
 
@@ -71,32 +77,37 @@ Its reference material lives in `plugins/claude-opus-5-prompt-optimizer/skills/o
 - `official-guidance.md` — dated working summary of the official docs, with canonical URLs.
 - `snippets.md` — copy-ready instruction blocks from Anthropic's guide, one per behavior.
 
-## Dual-protocol layout
+## Portable and client-native layout
 
 ```text
 .agents/plugins/marketplace.json         # Codex marketplace
 .claude-plugin/marketplace.json          # Claude Code marketplace
 plugins/
 ├── optimize-gpt-5-6-prompts/
+│   ├── plugin.json                       # Agent Plugins 1.0
 │   ├── .codex-plugin/plugin.json
 │   ├── .claude-plugin/plugin.json
 │   └── skills/optimize-gpt-5-6-prompts/
 ├── claude-fable-5-prompt-optimizer/
+│   ├── plugin.json                       # Agent Plugins 1.0
 │   ├── .codex-plugin/plugin.json
 │   ├── .claude-plugin/plugin.json
 │   └── skills/optimize-claude-fable-5-prompts/
 └── claude-opus-5-prompt-optimizer/
+    ├── plugin.json                       # Agent Plugins 1.0
     ├── .codex-plugin/plugin.json
     ├── .claude-plugin/plugin.json
     └── skills/optimize-claude-opus-5-prompts/
 ```
 
-Each plugin owns its Skill directory. Nothing depends on paths outside the plugin root, so both runtimes can safely copy plugins into their versioned caches.
+Each plugin owns its Skill directory. Nothing depends on paths outside the plugin root, so portable clients and the native Codex and Claude Code loaders can safely copy plugins into their caches. The client-specific manifests remain additive compatibility files; they do not replace or override the portable root manifest.
 
 ## Validation
 
 The repository is checked with:
 
+- the official Agent Plugins 1.0 JSON Schema for every root `plugin.json`;
+- the Agent Skills reference validator for every skill;
 - the Codex Plugin validator for every plugin;
 - the Codex Skill validator for every skill;
 - `claude plugin validate` for the marketplace and every plugin;
@@ -105,6 +116,9 @@ The repository is checked with:
 
 ## Official sources
 
+- [Agent Plugins specification](https://agent-plugins.org/specification)
+- [Agent Plugins author guide](https://agent-plugins.org/plugin-authors)
+- [Agent Skills specification](https://agentskills.io/specification)
 - [Codex: build skills](https://learn.chatgpt.com/docs/build-skills)
 - [Codex: build plugins](https://learn.chatgpt.com/docs/build-plugins)
 - [Claude Code: create plugins](https://code.claude.com/docs/en/plugins)

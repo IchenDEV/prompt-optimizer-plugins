@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.2.0
+
+- Added a portable Agent Plugins 1.0 `plugin.json` to every plugin package.
+- Kept the existing Codex and Claude Code manifests as additive compatibility layers.
+- Aligned plugin versions across the portable, Codex, and Claude Code manifests.
+- Documented portable package paths, client-managed installation, and Agent Plugins validation.
+
 ## 2.1.0
 
 - Merged the Claude Opus 5 prompt optimizer in from the standalone `skil` marketplace.

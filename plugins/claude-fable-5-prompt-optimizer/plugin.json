@@ -1,8 +1,8 @@
 {
-  "name": "optimize-gpt-5-6-prompts",
-  "displayName": "GPT-5.6 Prompt Optimizer",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "claude-fable-5-prompt-optimizer",
   "version": "1.2.0",
-  "description": "Clarify and optimize prompts for GPT-5.6 using official OpenAI guidance.",
+  "description": "Clarify and optimize prompts for Claude Fable 5 using Anthropic's official guidance.",
   "author": {
     "name": "IchenDEV",
     "url": "https://github.com/IchenDEV"
@@ -11,9 +11,10 @@
   "repository": "https://github.com/IchenDEV/prompt-optimizer-plugins",
   "license": "MIT",
   "keywords": [
-    "gpt-5.6",
+    "claude-fable-5",
     "prompt-optimization",
-    "prompt-engineering"
-  ],
-  "skills": "./skills/"
+    "prompt-engineering",
+    "agent-plugin",
+    "agent-skill"
+  ]
 }

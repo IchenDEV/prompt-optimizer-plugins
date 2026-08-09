@@ -1,6 +1,6 @@
 {
   "name": "claude-opus-5-prompt-optimizer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Clarify and optimize prompts for Claude Opus 5 using Anthropic's official guidance.",
   "author": {
     "name": "IchenDEV",
