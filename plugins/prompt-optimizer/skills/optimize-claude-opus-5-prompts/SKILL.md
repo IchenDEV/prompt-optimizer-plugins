@@ -1,6 +1,6 @@
 ---
 name: optimize-claude-opus-5-prompts
-description: Clarify, audit, and rewrite rough or existing prompts for Claude Opus 5 using Anthropic's official prompting guidance. Use when a user asks to optimize, improve, migrate, debug, or design a prompt, system prompt, or agent harness for Claude Opus 5 (claude-opus-5), including requests phrased as Opus 5 prompt optimization, Opus 5 提示词优化, or migrating a Claude Opus 4.8 prompt. Also use when tuning observed Opus 5 behavior such as long responses, heavy progress narration, long written deliverables, scope expansion, eager subagent delegation, correction narration, over-verification, conservative code review, or thinking-disabled output artifacts. Ask only for missing information that would materially change the result; otherwise preserve intent and return a lean, copy-ready prompt.
+description: Clarify, audit, and rewrite rough or existing prompts for Claude Opus 5 using Anthropic's official prompting guidance. Use when a user asks to optimize, improve, migrate, debug, or design a prompt, system prompt, or agent harness for Claude Opus 5 (claude-opus-5), including explicit Opus 5 prompt optimization requests or migration from Claude Opus 4.8. Also use when tuning observed Opus 5 behavior such as long responses, heavy progress narration, long written deliverables, scope expansion, eager subagent delegation, correction narration, over-verification, conservative code review, or thinking-disabled output artifacts. Ask only for missing information that would materially change the result; otherwise preserve intent and return a lean, copy-ready prompt.
 ---
 
 # Optimize Claude Opus 5 Prompts
@@ -146,10 +146,10 @@ Honor the user's requested format. Otherwise use the smallest suitable response.
 
 For a completed optimization, return:
 
-1. `优化后的提示词` or `Optimized prompt`: one copy-ready fenced block.
-2. `关键改动` or `Key changes`: at most five concise bullets, only when useful. Name removals explicitly, with the behavior each removal targets.
-3. `假设` or `Assumptions`: only assumptions actually made.
-4. `运行时设置` or `Runtime settings`: only when requested or essential to the stated use case.
+1. `Optimized prompt`: one copy-ready fenced block.
+2. `Key changes`: at most five concise bullets, only when useful. Name removals explicitly, with the behavior each removal targets.
+3. `Assumptions`: only assumptions actually made.
+4. `Runtime settings`: only when requested or essential to the stated use case.
 
 When the user asks for prompt-only output, return only the copy-ready prompt: no headings, commentary, change notes, or Markdown fences unless a fenced block was requested.
 

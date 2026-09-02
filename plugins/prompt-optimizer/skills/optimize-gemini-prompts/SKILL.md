@@ -1,6 +1,6 @@
 ---
 name: optimize-gemini-prompts
-description: Clarify, audit, and rewrite rough or existing prompts for the Gemini model family using Google AI's official prompt design strategies. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a Gemini prompt, including requests phrased as Gemini 提示词优化, or when an underspecified Gemini prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a direct, consistently structured prompt with clear input boundaries, output requirements, grounding rules, multimodal references, and completion criteria where relevant.
+description: Clarify, audit, and rewrite rough or existing prompts for the Gemini model family using Google AI's official prompt design strategies. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a Gemini prompt, including explicit Gemini prompt optimization requests, or when an underspecified Gemini prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a direct, consistently structured prompt with clear input boundaries, output requirements, grounding rules, multimodal references, and completion criteria where relevant.
 ---
 
 # Optimize Gemini Prompts
@@ -83,10 +83,10 @@ If a check exposes blocking ambiguity, ask the user instead of guessing.
 
 Honor the user's requested format. Otherwise return:
 
-1. `优化后的提示词` or `Optimized prompt`: one copy-ready fenced block, or separate system and user blocks when both are needed.
-2. `关键改动` or `Key changes`: at most five concise bullets, only when useful.
-3. `假设` or `Assumptions`: only assumptions actually made.
-4. `API 设置建议` or `API settings`: only when requested or essential, and separate from the prompt.
+1. `Optimized prompt`: one copy-ready fenced block, or separate system and user blocks when both are needed.
+2. `Key changes`: at most five concise bullets, only when useful.
+3. `Assumptions`: only assumptions actually made.
+4. `API settings`: only when requested or essential, and separate from the prompt.
 
 For prompt-only requests, return only the prompt. For blocking clarification, return only a short blocker statement, one to three questions, and optionally a one-line answer template.
 

@@ -1,6 +1,6 @@
 {
   "name": "prompt-optimizer",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Clarify and optimize prompts for GPT-5.6, Claude, Gemini, Kimi, GLM, and DeepSeek-V4.",
   "author": {
     "name": "IchenDEV",
@@ -24,8 +24,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Prompt Optimizer",
-    "shortDescription": "Seven model-specific prompt optimizers in one plugin",
-    "longDescription": "Turn rough ideas or existing prompts into copy-ready prompts for GPT-5.6, Claude Fable 5, Claude Opus 5, Gemini, Kimi, GLM, or DeepSeek-V4. Each bundled skill follows its model's evidence and prompting guidance.",
+    "shortDescription": "Eight model-specific prompt optimizers in one plugin",
+    "longDescription": "Turn rough ideas or existing prompts into copy-ready prompts for GPT-5.6, Claude Fable 5.1, Claude Fable 5, Claude Opus 5, Gemini, Kimi, GLM, or DeepSeek-V4. Each bundled skill follows its model's evidence and prompting guidance.",
     "developerName": "IchenDEV",
     "category": "Productivity",
     "capabilities": [
@@ -35,7 +35,7 @@
       "Optimize this prompt for the best-matching supported model.",
       "Optimize this prompt for GPT-5.6.",
       "Optimize this prompt for Gemini.",
-      "把这段提示词优化成适合指定模型的版本。"
+      "Optimize this prompt for the specified model."
     ]
   }
 }

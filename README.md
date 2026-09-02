@@ -1,12 +1,13 @@
 # Prompt Optimizer
 
-One portable [Agent Plugins 1.0](https://agent-plugins.org/) package with seven model-specific prompt-optimization skills. The same skills work through the portable package, Codex marketplace, and Claude Code marketplace.
+One portable [Agent Plugins 1.0](https://agent-plugins.org/) package with eight model-specific prompt-optimization skills. The same skills work through the portable package, Codex marketplace, and Claude Code marketplace.
 
 ## Included skills
 
 | Target | Skill | Codex | Claude Code |
 | --- | --- | --- | --- |
 | GPT-5.6 | `optimize-gpt-5-6-prompts` | `$optimize-gpt-5-6-prompts` | `/prompt-optimizer:optimize-gpt-5-6-prompts` |
+| Claude Fable 5.1 | `optimize-claude-fable-5-1-prompts` | `$optimize-claude-fable-5-1-prompts` | `/prompt-optimizer:optimize-claude-fable-5-1-prompts` |
 | Claude Fable 5 | `optimize-claude-fable-5-prompts` | `$optimize-claude-fable-5-prompts` | `/prompt-optimizer:optimize-claude-fable-5-prompts` |
 | Claude Opus 5 | `optimize-claude-opus-5-prompts` | `$optimize-claude-opus-5-prompts` | `/prompt-optimizer:optimize-claude-opus-5-prompts` |
 | Gemini | `optimize-gemini-prompts` | `$optimize-gemini-prompts` | `/prompt-optimizer:optimize-gemini-prompts` |
@@ -18,7 +19,7 @@ Every skill preserves explicit requirements, asks targeted questions only when m
 
 ## Use with an Agent Plugins client
 
-Clone or download this repository, then import `plugins/prompt-optimizer`. It is one self-contained Agent Plugins 1.0 package with a root `plugin.json` and seven immediate children under `skills/`.
+Clone or download this repository, then import `plugins/prompt-optimizer`. It is one self-contained Agent Plugins 1.0 package with a root `plugin.json` and eight immediate children under `skills/`.
 
 Agent Plugins leaves installation and distribution to each client. See the [compatible clients list](https://agent-plugins.org/compatible-clients) and follow your client's local-directory or repository import instructions.
 
@@ -56,6 +57,7 @@ Version 3 replaces the previous one-plugin-per-model layout. Existing users shou
 ## Model-specific behavior
 
 - **GPT-5.6:** produces lean, outcome-first prompts grounded in OpenAI guidance.
+- **Claude Fable 5.1:** preserves working Fable 5 prompts, then applies targeted 5.1 guidance for effort, agent loops, progress visibility, completion, editing, and conversation history only where relevant.
 - **Claude Fable 5:** uses context-rich prompting and targeted clarification grounded in Anthropic guidance.
 - **Claude Opus 5:** optimizes subtractively, removing scaffolding the model no longer needs and adding only observed-behavior controls.
 - **Gemini:** uses direct, consistently delimited prompts, explicit multimodal references, long-context anchoring, and runtime separation grounded in Google AI guidance.
@@ -74,6 +76,7 @@ plugins/prompt-optimizer/
 ├── .claude-plugin/plugin.json
 └── skills/
     ├── optimize-gpt-5-6-prompts/
+    ├── optimize-claude-fable-5-1-prompts/
     ├── optimize-claude-fable-5-prompts/
     ├── optimize-claude-opus-5-prompts/
     ├── optimize-gemini-prompts/
@@ -89,7 +92,7 @@ Nothing depends on paths outside the plugin root, so portable clients and native
 The repository is checked with:
 
 - the official Agent Plugins 1.0 JSON Schema for the portable manifest;
-- the Agent Skills reference validator for all seven skills;
+- the Agent Skills reference validator for all eight skills;
 - the Codex Plugin and Skill validators;
 - `claude plugin validate` for the marketplace and plugin;
 - `git diff --check` and manifest/version consistency checks.
@@ -99,6 +102,7 @@ The repository is checked with:
 - [Agent Plugins specification](https://agent-plugins.org/specification)
 - [Agent Skills specification](https://agentskills.io/specification)
 - [Using GPT-5.6](https://developers.openai.com/api/docs/guides/latest-model)
+- [Prompting Claude Fable 5.1](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1)
 - [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5)
 - [Prompting Claude Opus 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5)
 - [Gemini prompt design strategies](https://ai.google.dev/gemini-api/docs/prompting-strategies)

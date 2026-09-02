@@ -1,0 +1,4 @@
+interface:
+  display_name: "Claude Fable 5.1 Prompt Optimizer"
+  short_description: "Clarify and optimize prompts for Claude Fable 5.1"
+  default_prompt: "Use $optimize-claude-fable-5-1-prompts to clarify and optimize this prompt for Claude Fable 5.1."

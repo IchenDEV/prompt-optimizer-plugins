@@ -1,6 +1,6 @@
 ---
 name: optimize-deepseek-v4-prompts
-description: Clarify, audit, and rewrite rough or existing prompts specifically for DeepSeek-V4 Pro and Flash using the DeepSeek-AI V4 technical report as the model-specific evidence base. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a DeepSeek-V4 prompt, including requests phrased as DeepSeek 提示词优化 or DeepSeek-V4 提示词优化, or when an underspecified V4 prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce an explicit, evidence-bounded prompt while keeping reasoning mode, special tokens, and tool protocol configuration outside ordinary prompt prose.
+description: Clarify, audit, and rewrite rough or existing prompts specifically for DeepSeek-V4 Pro and Flash using the DeepSeek-AI V4 technical report as the model-specific evidence base. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a DeepSeek-V4 prompt, including explicit DeepSeek or DeepSeek-V4 prompt optimization requests, or when an underspecified V4 prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce an explicit, evidence-bounded prompt while keeping reasoning mode, special tokens, and tool protocol configuration outside ordinary prompt prose.
 ---
 
 # Optimize DeepSeek-V4 Prompts
@@ -78,10 +78,10 @@ If a check exposes blocking ambiguity, ask the user instead of guessing.
 
 Honor the user's requested format. Otherwise return:
 
-1. `优化后的提示词` or `Optimized prompt`: one copy-ready fenced block.
-2. `关键改动` or `Key changes`: at most five concise bullets, only when useful.
-3. `假设` or `Assumptions`: only assumptions actually made.
-4. `运行时建议` or `Runtime guidance`: only when requested or essential, with a note to verify current platform controls.
+1. `Optimized prompt`: one copy-ready fenced block.
+2. `Key changes`: at most five concise bullets, only when useful.
+3. `Assumptions`: only assumptions actually made.
+4. `Runtime guidance`: only when requested or essential, with a note to verify current platform controls.
 
 For prompt-only requests, return only the prompt. For blocking clarification, return only a short blocker statement, one to three questions, and optionally a one-line answer template.
 

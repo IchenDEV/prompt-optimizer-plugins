@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.2.0
+
+- Added `optimize-claude-fable-5-1-prompts` while preserving the existing Fable 5 optimizer.
+- Covered Fable 5.1 migration, effort tuning, agent-loop batching, progress visibility, append-only conversation history, task completion, scoped changes, source quotation, targeted edits, and runtime separation.
+- Kept both Fable skill entrypoints compact and moved detailed behavior into routed references that cover every model-specific section plus the complete shared Anthropic methodology for clarity, examples, XML, long context, output control, tools, thinking, agentic systems, vision, frontend work, migration, runtime, source quotation, and compaction.
+- Standardized all distributed skill instructions, output labels, and default prompts on English-only wording.
+- Updated the portable, Codex, and Claude Code plugin metadata for eight bundled optimizers.
+
 ## 3.1.0
 
 - Added `optimize-gemini-prompts`, grounded in Google AI's official prompt design strategies.

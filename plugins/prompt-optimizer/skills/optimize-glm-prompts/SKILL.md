@@ -1,6 +1,6 @@
 ---
 name: optimize-glm-prompts
-description: Clarify, audit, and rewrite rough or existing prompts for the GLM language-model family using Zhipu AI's official prompt-engineering guidance. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a GLM prompt, including requests phrased as GLM 提示词优化 or 智谱提示词优化, or when an underspecified GLM prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a clear prompt with appropriate system behavior, input boundaries, grounding, structured-output rules, and completion criteria.
+description: Clarify, audit, and rewrite rough or existing prompts for the GLM language-model family using Zhipu AI's official prompt-engineering guidance. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a GLM prompt, including explicit GLM or Zhipu AI prompt optimization requests, or when an underspecified GLM prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a clear prompt with appropriate system behavior, input boundaries, grounding, structured-output rules, and completion criteria.
 ---
 
 # Optimize GLM Prompts
@@ -78,10 +78,10 @@ If a check exposes blocking ambiguity, ask the user instead of guessing.
 
 Honor the user's requested format. Otherwise return:
 
-1. `优化后的提示词` or `Optimized prompt`: one copy-ready fenced block, or separate system and user blocks when both are needed.
-2. `关键改动` or `Key changes`: at most five concise bullets, only when useful.
-3. `假设` or `Assumptions`: only assumptions actually made.
-4. `API 设置建议` or `API settings`: only when requested or essential.
+1. `Optimized prompt`: one copy-ready fenced block, or separate system and user blocks when both are needed.
+2. `Key changes`: at most five concise bullets, only when useful.
+3. `Assumptions`: only assumptions actually made.
+4. `API settings`: only when requested or essential.
 
 For prompt-only requests, return only the prompt. For blocking clarification, return only a short blocker statement, one to three questions, and optionally a one-line answer template.
 

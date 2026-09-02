@@ -1,6 +1,6 @@
 ---
 name: optimize-gpt-5-6-prompts
-description: Clarify, audit, and rewrite rough or existing prompts for GPT-5.6 Sol and the GPT-5.6 family using OpenAI's official prompting guidance. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a GPT-5.6 prompt, including requests phrased as GPT-5.6 提示词优化, or when an underspecified prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a lean, outcome-first prompt with explicit constraints, output requirements, and completion criteria.
+description: Clarify, audit, and rewrite rough or existing prompts for GPT-5.6 Sol and the GPT-5.6 family using OpenAI's official prompting guidance. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a GPT-5.6 prompt, including requests explicitly phrased as GPT-5.6 prompt optimization, or when an underspecified prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a lean, outcome-first prompt with explicit constraints, output requirements, and completion criteria.
 ---
 
 # Optimize GPT-5.6 Prompts
@@ -105,10 +105,10 @@ Honor any output format the user requested. Otherwise use the smallest suitable 
 
 For a completed optimization, return:
 
-1. `优化后的提示词` or `Optimized prompt`: one copy-ready fenced block.
-2. `关键改动` or `Key changes`: at most five concise bullets, only when useful.
-3. `假设` or `Assumptions`: include only assumptions actually made.
-4. `API 设置建议` or `API settings`: include only when the user asks for runtime configuration or when a setting is essential to the stated use case.
+1. `Optimized prompt`: one copy-ready fenced block.
+2. `Key changes`: at most five concise bullets, only when useful.
+3. `Assumptions`: include only assumptions actually made.
+4. `API settings`: include only when the user asks for runtime configuration or when a setting is essential to the stated use case.
 
 When the user requests prompt-only output, return only the copy-ready prompt. Do not add analysis inside the prompt unless the user wants it there.
 
