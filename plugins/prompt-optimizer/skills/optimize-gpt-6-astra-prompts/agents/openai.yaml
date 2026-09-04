@@ -1,0 +1,4 @@
+interface:
+  display_name: "GPT-6 Astra Prompt Optimizer"
+  short_description: "Clarify and optimize prompts for GPT-6 Astra"
+  default_prompt: "Use $optimize-gpt-6-astra-prompts to clarify and optimize this prompt for GPT-6 Astra."
