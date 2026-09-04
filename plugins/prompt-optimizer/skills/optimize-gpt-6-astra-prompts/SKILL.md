@@ -1,0 +1,137 @@
+---
+name: optimize-gpt-6-astra-prompts
+description: Clarify, audit, migrate, and rewrite prompts for GPT-6 Astra using OpenAI's official latest-model prompting guidance. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a GPT-6 Astra prompt, including requests phrased as GPT-6, Astra, or gpt-6-astra prompt optimization, or when an underspecified prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a lean, outcome-first prompt with explicit autonomy, instruction-priority, style, and completion criteria.
+---
+
+# Optimize GPT-6 Astra Prompts
+
+Turn rough ideas and existing prompt stacks into copy-ready GPT-6 Astra prompts. Preserve the user's intent and hard constraints, ask for genuinely blocking information, and apply Astra-specific mitigations only where the task or observed behavior requires them.
+
+## Use the official basis
+
+Read [references/official-guidance.md](references/official-guidance.md) when model-specific rationale, API-setting guidance, migration notes, or the longer checklist is needed. Treat its URLs as canonical sources and its prose as a dated summary. Fetch the live OpenAI pages before making claims about the current model alias, parameters, availability, or other facts that may change.
+
+## Follow the workflow
+
+### 1. Capture the prompt contract
+
+Identify the following from the user's message, pasted prompt, or referenced file:
+
+- intended user-visible outcome;
+- inputs and context the model will receive;
+- hard constraints and facts to preserve;
+- required output shape, audience, and language;
+- evidence, tool use, or validation needed for success;
+- side effects the model may take and actions that require approval;
+- autonomy level: when to ask, when to persist, and when approval is the final step;
+- fallback or stopping behavior when required information is unavailable.
+
+Treat these as diagnostic dimensions, not mandatory sections. Keep a simple rewriting prompt simple.
+
+If the user supplies a layered prompt stack, preserve the separation between system, developer, user, and tool-description content. Do not silently move instructions between trust levels.
+
+### 2. Apply the clarity gate
+
+Ask a question only when the missing or conflicting information is blocking: two reasonable answers would lead to materially different prompts, outputs, permissions, or success criteria.
+
+Treat the following as blocking by default:
+
+- a vague new-prompt request that names only a topic and generic verb while the intended decision, audience, or deliverable could vary materially;
+- an action prompt that can send, publish, purchase, delete, change records, modify terms, or affect another person when the authorization and approval boundary is not explicit;
+- a task that depends on an unspecified source, system, policy, tool, or evidence set whose choice changes what the model may conclude or do;
+- conflicting instructions about scope, output, permissions, evidence, or completion;
+- a strict output contract whose required fields or semantics cannot be inferred safely.
+
+Do not turn these gaps into placeholders, invented policies, assumed access, or a provisional workflow. A conservative execution policy does not cure an undefined goal or missing authorization.
+
+Proceed without asking when the core outcome and contract are already clear and the missing detail is cosmetic or safely local. For a new prompt, require enough information to distinguish the intended use from other plausible uses; for an existing concrete prompt, preserve its contract and avoid demanding optional context.
+
+When clarification is blocking:
+
+1. Ask one to three high-information questions in a single turn.
+2. Explain choices briefly when the user may not know the terminology.
+3. Offer concrete options or a short fill-in reply when that makes answering easier.
+4. Do not present a supposedly final optimized prompt yet.
+5. Repeat the gate after the reply and ask again only if a material ambiguity remains.
+
+Ask for the smallest missing fact. Do not interrogate the user for optional tone preferences, minor formatting choices, or details that can be handled with a conservative assumption.
+
+If the user explicitly delegates a choice, make a reasonable assumption, label it after the prompt, and continue. Never invent source facts, policies, permissions, metrics, or product capabilities.
+
+### 3. Rewrite for GPT-6 Astra
+
+Apply only changes that improve the prompt contract. Prefer a surgical rewrite of a working GPT-5.6 or earlier prompt unless the user asks for a broader redesign.
+
+Astra-specific mitigations — add only when relevant:
+
+- **Initiative and follow-through:** If the product needs autonomous completion, state that action-shaped user requests authorize work, bias toward action from context, persist until the goal is complete for reversible work, and ask for approval only after preparing a concrete, reviewable result. Do not add unsolicited hypothetical risk checklists.
+- **Instruction priority:** When skills, `AGENTS.md`, or other loaded files can conflict with the user, make user instructions take precedence and require naming the exact skill instruction that caused a pause or diversion.
+- **Writing style:** Astra tends toward lists, tables, and dense formatting. Specify prose, structure, jargon level, and banned stock phrases when the product needs a different voice.
+- **Subagent delegation:** If the harness supports parallel agents, state when and how much to delegate. Ask for legible inter-agent messages when humans may read them.
+- **Testing and verification:** For coding agents, calibrate verification to change impact so small reversible edits are not over-tested.
+
+Shared rewrite rules that still apply:
+
+- Lead with the outcome and define what completion means.
+- State each rule once; remove repetition, obsolete scaffolding, and irrelevant examples.
+- Resolve contradictions. If a conflict cannot be resolved from context, return to the clarity gate.
+- Preserve explicit user values and factual claims exactly unless correction was requested.
+- Prefer decision rules over blanket `always`, `never`, or keyword-trigger rules. Reserve absolutes for true invariants.
+- Specify required evidence, validation, and stop conditions when correctness depends on them.
+- Define autonomy and approval boundaries once for prompts that can read, change, purchase, publish, message, delete, or otherwise act.
+- Expose or describe only relevant tools. State prerequisites, important result fields, fallback behavior, and direct-versus-programmatic routing only when they affect the task.
+- Specify output content and structure. For short answers, name the facts, caveats, and next actions that must survive trimming.
+- Preserve the source language unless the user requests another language.
+- Replace requests to "think step by step" or "think harder" with outcome, evidence, and verification requirements. Keep API reasoning settings outside the prompt.
+- Keep optional sections out. Do not force every prompt into a large template.
+
+### 4. Validate before returning
+
+Silently run all applicable checks:
+
+1. **Intent:** Does the rewrite solve the same task without widening or narrowing scope?
+2. **Preservation:** Are all user facts, explicit values, hard constraints, and required fields retained?
+3. **Clarity:** Could two reasonable agents still disagree about the core outcome, permission boundary, or required output?
+4. **Completeness:** Are success, evidence, validation, and stopping conditions defined where they materially matter?
+5. **Consistency:** Are any instructions duplicated, contradictory, or placed in the wrong prompt layer?
+6. **Leanness:** Can any clause be removed without changing behavior?
+7. **Executability:** Can the model act using only the stated inputs and tools, or does a blocking dependency remain?
+8. **Non-invention:** Did the rewrite add facts, access, permissions, or capabilities the user never supplied?
+9. **Astra fit:** Were initiative, instruction-priority, style, delegation, and verification controls added only when needed, and do they match the product's autonomy level?
+
+If a check exposes blocking ambiguity, ask the user instead of guessing. Otherwise revise until every applicable check passes.
+
+### 5. Return the result
+
+Honor any output format the user requested. Otherwise use the smallest suitable form.
+
+For a completed optimization, return:
+
+1. `Optimized prompt`: one copy-ready fenced block.
+2. `Key changes`: at most five concise bullets, only when useful.
+3. `Assumptions`: include only assumptions actually made.
+4. `API settings`: include only when the user asks for runtime configuration or when a setting is essential to the stated use case. Prefer `model: gpt-6-astra`, Responses API for tool calling, and keep `reasoning.effort` outside prompt prose. Do not recommend `none` effort.
+
+When the user requests prompt-only output, return only the copy-ready prompt. Do not add analysis inside the prompt unless the user wants it there.
+
+For blocking clarification, return only:
+
+- a short statement that the prompt cannot yet be optimized reliably;
+- the one to three questions;
+- an optional one-line answer template.
+
+Do not bury the questions beneath a provisional rewrite.
+
+## Avoid common regressions
+
+- Do not add role, personality, tools, or stop-rule sections when they do not change behavior.
+- Do not paste every official Astra snippet into every prompt; apply only the relevant mitigation.
+- Do not replace specific requirements with generic instructions such as "be concise," "be thorough," or "use tools efficiently."
+- Do not use prompt length or section count as a proxy for quality.
+- Do not ask for information merely to make the prompt perfect; ask only when it changes the contract materially.
+- Do not recommend maximum reasoning effort globally. Fix missing success criteria, routing, dependencies, or validation before increasing effort.
+- Do not claim that a rewrite is better solely because it is shorter. Preserve product requirements and measured fixes.
+
+## Completion bar
+
+Finish only when the prompt is copy-ready, blocking ambiguity is resolved, explicit constraints are preserved, the rewrite is lean, Astra-specific controls match the product need, and the validation checklist passes. If those conditions cannot be met, state the smallest missing information instead of fabricating a complete prompt.

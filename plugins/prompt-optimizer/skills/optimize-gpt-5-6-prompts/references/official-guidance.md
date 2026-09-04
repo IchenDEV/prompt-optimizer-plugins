@@ -1,10 +1,10 @@
 # Official GPT-5.6 prompting guidance
 
-This is a concise, dated working summary of OpenAI's official guidance, checked on 2026-07-15. Use the live pages for current model IDs, parameters, availability, limits, or pricing.
+This is a concise, dated working summary of OpenAI's official guidance, checked on 2026-09-04. Use the live pages for current model IDs, parameters, availability, limits, or pricing. For GPT-6 Astra, use the `optimize-gpt-6-astra-prompts` skill instead; `/latest-model` now documents Astra by default.
 
 ## Canonical sources
 
-- [Using GPT-5.6](https://developers.openai.com/api/docs/guides/latest-model)
+- [Using GPT-5.6](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)
 - [Prompting guidance for GPT-5.6 Sol](https://developers.openai.com/api/docs/guides/prompt-guidance-gpt-5p6)
 - [Upgrading to GPT-5.6 Sol](https://developers.openai.com/api/docs/guides/upgrading-to-gpt-5p6-sol)
 - [Prompt engineering](https://developers.openai.com/api/docs/guides/prompt-engineering)

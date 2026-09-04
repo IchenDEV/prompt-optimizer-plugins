@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.2.0
+
+- Added `optimize-gpt-6-astra-prompts`, grounded in OpenAI's [Using GPT-6 Astra](https://developers.openai.com/api/docs/guides/latest-model) guide.
+- Covered Astra initiative and follow-through, instruction priority for skills/`AGENTS.md`, writing-style controls, subagent delegation, testing calibration, and migration/runtime separation.
+- Kept the existing GPT-5.6 optimizer and pointed its canonical model guide at the GPT-5.6-specific latest-model URL.
+- Updated the portable, Codex, and Claude Code plugin metadata for eight bundled optimizers.
+
 ## 3.1.0
 
 - Added `optimize-gemini-prompts`, grounded in Google AI's official prompt design strategies.
