@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.3.0
+
+- Added `audit-gpt-6-astra-skills`, grounded in Eric Provencher's [Rethinking skills and prompts for GPT-6 Astra](https://x.com/pvncher/status/2095991462416490862) practitioner guidance.
+- Covered Skills description hygiene, progressive disclosure, AGENTS.md full-repo/pre-read cleanup, testing recalibration, decision boundaries, and persistence/completion audits.
+- Kept `optimize-gpt-6-astra-prompts` for official-docs prompt rewriting; this skill focuses on harness and scaffolding cleanup.
+- Updated the portable, Codex, and Claude Code plugin metadata for nine bundled skills.
+
 ## 3.2.0
 
 - Added `optimize-gpt-6-astra-prompts`, grounded in OpenAI's [Using GPT-6 Astra](https://developers.openai.com/api/docs/guides/latest-model) guide.

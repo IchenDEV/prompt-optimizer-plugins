@@ -1,8 +1,8 @@
 {
   "name": "prompt-optimizer",
   "displayName": "Prompt Optimizer",
-  "version": "3.2.0",
-  "description": "Clarify and optimize prompts for GPT-6 Astra, GPT-5.6, Claude, Gemini, Kimi, GLM, and DeepSeek-V4.",
+  "version": "3.3.0",
+  "description": "Clarify and optimize prompts for GPT-6 Astra, GPT-5.6, Claude, Gemini, Kimi, GLM, and DeepSeek-V4, plus Astra Skills/AGENTS.md audits.",
   "author": {
     "name": "IchenDEV",
     "url": "https://github.com/IchenDEV"
