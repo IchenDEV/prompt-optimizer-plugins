@@ -11,6 +11,8 @@ Turn rough ideas and existing prompt stacks into copy-ready GPT-6 Astra prompts.
 
 Read [references/official-guidance.md](references/official-guidance.md) when model-specific rationale, API-setting guidance, migration notes, or the longer checklist is needed. Treat its URLs as canonical sources and its prose as a dated summary. Fetch the live OpenAI pages before making claims about the current model alias, parameters, availability, or other facts that may change.
 
+For cleaning repository Skills, `AGENTS.md`, or Sol-era coding-agent scaffolding (wrong skill loads, full-repo pre-reads, over-testing, early stops), use `$audit-gpt-6-astra-skills` instead of stuffing harness cleanup into a prompt rewrite.
+
 ## Follow the workflow
 
 ### 1. Capture the prompt contract
