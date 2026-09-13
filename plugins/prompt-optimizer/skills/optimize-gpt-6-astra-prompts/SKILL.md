@@ -1,6 +1,6 @@
 ---
 name: optimize-gpt-6-astra-prompts
-description: Clarify, audit, migrate, and rewrite prompts for GPT-6 Astra using OpenAI's official latest-model prompting guidance. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a GPT-6 Astra prompt, including requests phrased as GPT-6, Astra, or gpt-6-astra prompt optimization, or when an underspecified prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a lean, outcome-first prompt with explicit autonomy, instruction-priority, style, and completion criteria.
+description: Clarify, migrate, and rewrite product prompts for GPT-6 Astra using OpenAI's latest-model guidance. Use when optimizing, debugging, migrating, or designing a GPT-6 Astra / gpt-6-astra prompt—not for Skills/AGENTS.md harness cleanup (use audit-gpt-6-astra-skills).
 ---
 
 # Optimize GPT-6 Astra Prompts
@@ -11,7 +11,7 @@ Turn rough ideas and existing prompt stacks into copy-ready GPT-6 Astra prompts.
 
 Read [references/official-guidance.md](references/official-guidance.md) when model-specific rationale, API-setting guidance, migration notes, or the longer checklist is needed. Treat its URLs as canonical sources and its prose as a dated summary. Fetch the live OpenAI pages before making claims about the current model alias, parameters, availability, or other facts that may change.
 
-For cleaning repository Skills, `AGENTS.md`, or Sol-era coding-agent scaffolding (wrong skill loads, full-repo pre-reads, over-testing, early stops), use `$audit-gpt-6-astra-skills` instead of stuffing harness cleanup into a prompt rewrite.
+For cleaning repository Skills, `AGENTS.md`, or Sol-era coding-agent scaffolding (wrong skill loads, full-repo pre-reads, over-testing, early stops), use `$audit-gpt-6-astra-skills` instead of stuffing harness cleanup into a prompt rewrite. That skill follows [Rethinking skills and prompts for GPT-6 Astra](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra).
 
 ## Follow the workflow
 
@@ -66,11 +66,12 @@ Apply only changes that improve the prompt contract. Prefer a surgical rewrite o
 
 Astra-specific mitigations — add only when relevant:
 
-- **Initiative and follow-through:** If the product needs autonomous completion, state that action-shaped user requests authorize work, bias toward action from context, persist until the goal is complete for reversible work, and ask for approval only after preparing a concrete, reviewable result. Do not add unsolicited hypothetical risk checklists.
-- **Instruction priority:** When skills, `AGENTS.md`, or other loaded files can conflict with the user, make user instructions take precedence and require naming the exact skill instruction that caused a pause or diversion.
+- **Initiative and follow-through:** If the product needs autonomous completion, state that action-shaped user requests authorize work, bias toward action from context, persist until the goal is complete for reversible work, and ask for approval only after preparing a concrete, reviewable result. Do not add unsolicited hypothetical risk checklists. Define completion explicitly when Astra may stop after a first implementation.
+- **Instruction priority:** When skills, `AGENTS.md`, or other loaded files can conflict with the user, make user instructions take precedence and require naming the exact skill instruction that caused a pause or diversion. Prefer harness cleanup via `$audit-gpt-6-astra-skills` over stuffing more rules into the product prompt.
 - **Writing style:** Astra tends toward lists, tables, and dense formatting. Specify prose, structure, jargon level, and banned stock phrases when the product needs a different voice.
 - **Subagent delegation:** If the harness supports parallel agents, state when and how much to delegate. Ask for legible inter-agent messages when humans may read them.
 - **Testing and verification:** For coding agents, calibrate verification to change impact so small reversible edits are not over-tested.
+- **Decision boundaries:** Soften Sol-era blanket ask-first language for reversible in-scope work; keep gates for irreversible or external actions. Astra is highly aligned—over-strict boundaries can stop work too early.
 
 Shared rewrite rules that still apply:
 
