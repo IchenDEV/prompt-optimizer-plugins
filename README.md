@@ -57,8 +57,8 @@ Version 3 replaces the previous one-plugin-per-model layout. Existing users shou
 
 ## Model-specific behavior
 
-- **GPT-6 Astra prompts:** tunes initiative, instruction priority for skills/`AGENTS.md`, writing style, subagent delegation, and verification using OpenAI's latest-model guidance.
-- **GPT-6 Astra Skills audit:** subtractively cleans Skills, `AGENTS.md`, and harness scaffolding using Eric Provencher's practitioner house-cleaning guidance.
+- **GPT-6 Astra prompts:** tunes initiative, instruction priority for skills/`AGENTS.md`, writing style, subagent delegation, decision boundaries, and verification using OpenAI's latest-model guidance.
+- **GPT-6 Astra Skills audit:** subtractively cleans Skills, `AGENTS.md`, and harness scaffolding using OpenAI's [Rethinking skills and prompts for GPT-6 Astra](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra) guidance (short triggers, progressive disclosure, contextual docs, persistence).
 - **GPT-5.6:** produces lean, outcome-first prompts grounded in OpenAI guidance.
 - **Claude Fable 5:** uses context-rich prompting and targeted clarification grounded in Anthropic guidance.
 - **Claude Opus 5:** optimizes subtractively, removing scaffolding the model no longer needs and adding only observed-behavior controls.
@@ -106,7 +106,7 @@ The repository is checked with:
 - [Agent Skills specification](https://agentskills.io/specification)
 - [Using GPT-6 Astra](https://developers.openai.com/api/docs/guides/latest-model)
 - [Using GPT-5.6](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)
-- [Rethinking skills and prompts for GPT-6 Astra](https://x.com/pvncher/status/2095991462416490862) (@pvncher)
+- [Rethinking skills and prompts for GPT-6 Astra](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra)
 - [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5)
 - [Prompting Claude Opus 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5)
 - [Gemini prompt design strategies](https://ai.google.dev/gemini-api/docs/prompting-strategies)

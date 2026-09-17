@@ -1,4 +1,4 @@
 interface:
   display_name: "GPT-6 Astra Skills Audit"
-  short_description: "Clean Skills and AGENTS.md for GPT-6 Astra"
-  default_prompt: "Use $audit-gpt-6-astra-skills to audit Skills and AGENTS.md for GPT-6 Astra."
+  short_description: "Subtractive Skills/AGENTS.md cleanup for Astra"
+  default_prompt: "Use $audit-gpt-6-astra-skills to audit Skills and AGENTS.md against OpenAI's GPT-6 Astra skills guidance."

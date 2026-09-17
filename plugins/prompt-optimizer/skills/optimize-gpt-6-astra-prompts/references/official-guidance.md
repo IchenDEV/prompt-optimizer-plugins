@@ -1,10 +1,11 @@
 # Official GPT-6 Astra prompting guidance
 
-This is a concise, dated working summary of OpenAI's official guidance, checked on 2026-09-04. Use the live pages for current model IDs, parameters, availability, limits, or pricing. This file is a paraphrase for optimizer use, not a verbatim copy of the source.
+This is a concise, dated working summary of OpenAI's official guidance, checked on 2026-09-13. Use the live pages for current model IDs, parameters, availability, limits, or pricing. This file is a paraphrase for optimizer use, not a verbatim copy of the source.
 
 ## Canonical sources
 
 - [Using GPT-6 Astra](https://developers.openai.com/api/docs/guides/latest-model)
+- [Rethinking skills and prompts for GPT-6 Astra](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra) — harness / Skills / `AGENTS.md` cleanup (prefer `$audit-gpt-6-astra-skills`)
 - [Prompt engineering](https://developers.openai.com/api/docs/guides/prompt-engineering)
 - Related capability pages linked from the model guide: [Async tool calling](https://developers.openai.com/api/docs/guides/async-tool-calling), [Mid-turn steering](https://developers.openai.com/api/docs/guides/steering), [Reasoning](https://developers.openai.com/api/docs/guides/reasoning), [Prompt caching](https://developers.openai.com/api/docs/guides/prompt-caching)
 
@@ -38,7 +39,7 @@ Use when skills or instruction files conflict with the user, or cause early paus
 
 - State that explicit user instructions take precedence over skill guidelines when they conflict.
 - When a skill causes a permission ask, pause, unfinished work, or divergence from intent, require naming and linking the exact `SKILL.md`, quoting the relevant instruction, and distinguishing explicit requirements from interpretation.
-- Audit loaded skills and files such as `AGENTS.md` for unclear or conflicting guidance; Astra is more sensitive to them than earlier models.
+- Audit loaded skills and files such as `AGENTS.md` for unclear or conflicting guidance; Astra is more sensitive to them than earlier models. For subtractive harness cleanup (short skill descriptions, progressive disclosure, drop mandatory full-repo reads, recalibrate testing and ask-first boundaries, define completion), follow the Developers blog via `$audit-gpt-6-astra-skills` rather than bloating the product prompt.
 
 ### Personality and writing style
 

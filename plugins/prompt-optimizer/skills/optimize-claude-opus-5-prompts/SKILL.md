@@ -1,6 +1,6 @@
 ---
 name: optimize-claude-opus-5-prompts
-description: Clarify, audit, and rewrite rough or existing prompts for Claude Opus 5 using Anthropic's official prompting guidance. Use when a user asks to optimize, improve, migrate, debug, or design a prompt, system prompt, or agent harness for Claude Opus 5 (claude-opus-5), including requests phrased as Opus 5 prompt optimization, Opus 5 提示词优化, or migrating a Claude Opus 4.8 prompt. Also use when tuning observed Opus 5 behavior such as long responses, heavy progress narration, long written deliverables, scope expansion, eager subagent delegation, correction narration, over-verification, conservative code review, or thinking-disabled output artifacts. Ask only for missing information that would materially change the result; otherwise preserve intent and return a lean, copy-ready prompt.
+description: Clarify and rewrite prompts or agent harnesses for Claude Opus 5 (claude-opus-5). Use when optimizing, migrating from Opus 4.8, or tuning Opus 5 behaviors such as long responses, over-narration, scope expansion, eager subagents, or over-verification (including Opus 5 提示词优化)—not for Claude Fable 5.
 ---
 
 # Optimize Claude Opus 5 Prompts

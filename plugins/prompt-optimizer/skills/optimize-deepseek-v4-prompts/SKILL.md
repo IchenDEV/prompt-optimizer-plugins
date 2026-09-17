@@ -1,6 +1,6 @@
 ---
 name: optimize-deepseek-v4-prompts
-description: Clarify, audit, and rewrite rough or existing prompts specifically for DeepSeek-V4 Pro and Flash using the DeepSeek-AI V4 technical report as the model-specific evidence base. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a DeepSeek-V4 prompt, including requests phrased as DeepSeek 提示词优化 or DeepSeek-V4 提示词优化, or when an underspecified V4 prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce an explicit, evidence-bounded prompt while keeping reasoning mode, special tokens, and tool protocol configuration outside ordinary prompt prose.
+description: Clarify and rewrite prompts for DeepSeek-V4 Pro and Flash. Use when optimizing, debugging, migrating, or designing a DeepSeek-V4 prompt (including DeepSeek / DeepSeek-V4 提示词优化); keep reasoning modes and special tokens outside prompt prose.
 ---
 
 # Optimize DeepSeek-V4 Prompts

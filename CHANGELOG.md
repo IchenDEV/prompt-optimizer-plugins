@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.4.0
+
+- Rebased `audit-gpt-6-astra-skills` on the official OpenAI Developers blog [Rethinking skills and prompts for GPT-6 Astra](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra) (replacing the prior X Article as the canonical source).
+- Added blog-faithful bad/good examples for skill descriptions and `AGENTS.md` pre-reads, plus failure modes for description truncation, contradictory triggers, progressive-disclosure routers, aligned decision boundaries, and completion/persistence.
+- Shortened all nine bundled skill `description` fields into trigger-focused routing text so Codex is less likely to truncate them when many skills are installed.
+- Cross-linked `optimize-gpt-6-astra-prompts` to the blog for harness cleanup; kept product-prompt rewriting on the latest-model API guide.
+- Updated portable, Codex, and Claude Code plugin metadata to 3.4.0.
+
 ## 3.3.0
 
 - Added `audit-gpt-6-astra-skills`, grounded in Eric Provencher's [Rethinking skills and prompts for GPT-6 Astra](https://x.com/pvncher/status/2095991462416490862) practitioner guidance.
