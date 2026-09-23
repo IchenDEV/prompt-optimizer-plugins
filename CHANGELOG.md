@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.6.0
+
+- Added `optimize-claude-opus-5-5-prompts`, grounded in Anthropic's [Prompting Claude Opus 5.5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5) guide.
+- Covered always-on thinking, effort calibration from `medium`, thinking-disabled migration, unattended early stops, progress-update display, multi-app exploration, time signals, chat thinking latency, pasted-content marking, vision, and frontend defaults.
+- Cross-linked Opus 5 and Fable 5 skill descriptions so routing excludes Opus 5.5 when that model is intended.
+- Updated portable, Codex, and Claude Code plugin metadata to 3.6.0.
+
 ## 3.5.0
 
 - Added `optimize-gpt-6-sol-luna-prompts`, grounded in OpenAI's [Using GPT-6](https://developers.openai.com/api/docs/guides/latest-model) family guide plus the [GPT-6 Sol](https://developers.openai.com/api/docs/models/gpt-6-sol) and [GPT-6 Luna](https://developers.openai.com/api/docs/models/gpt-6-luna) model pages.

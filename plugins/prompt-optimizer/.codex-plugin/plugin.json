@@ -1,7 +1,7 @@
 {
   "name": "prompt-optimizer",
-  "version": "3.5.0",
-  "description": "Clarify and optimize prompts for GPT-6 Astra, GPT-6 Sol/Luna, GPT-5.6, Claude, Gemini, Kimi, GLM, and DeepSeek-V4, plus Astra Skills/AGENTS.md audits.",
+  "version": "3.6.0",
+  "description": "Clarify and optimize prompts for GPT-6 Astra, GPT-6 Sol/Luna, GPT-5.6, Claude (including Opus 5.5), Gemini, Kimi, GLM, and DeepSeek-V4, plus Astra Skills/AGENTS.md audits.",
   "author": {
     "name": "IchenDEV",
     "url": "https://github.com/IchenDEV"
@@ -17,6 +17,7 @@
     "gpt-6-luna",
     "gpt-5.6",
     "claude",
+    "claude-opus-5-5",
     "gemini",
     "kimi",
     "glm",
@@ -27,8 +28,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Prompt Optimizer",
-    "shortDescription": "Ten bundled prompt and agent-scaffold optimizers",
-    "longDescription": "Turn rough ideas or existing prompts into copy-ready prompts for GPT-6 Astra, GPT-6 Sol, GPT-6 Luna, GPT-5.6, Claude Fable 5, Claude Opus 5, Gemini, Kimi, GLM, or DeepSeek-V4, and audit Astra Skills/AGENTS.md scaffolding. Each bundled skill follows its model's evidence and prompting guidance.",
+    "shortDescription": "Eleven bundled prompt and agent-scaffold optimizers",
+    "longDescription": "Turn rough ideas or existing prompts into copy-ready prompts for GPT-6 Astra, GPT-6 Sol, GPT-6 Luna, GPT-5.6, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Gemini, Kimi, GLM, or DeepSeek-V4, and audit Astra Skills/AGENTS.md scaffolding. Each bundled skill follows its model's evidence and prompting guidance.",
     "developerName": "IchenDEV",
     "category": "Productivity",
     "capabilities": [
@@ -39,6 +40,7 @@
       "Optimize this prompt for GPT-6 Astra.",
       "Audit Skills and AGENTS.md for GPT-6 Astra.",
       "Optimize this prompt for GPT-6 Sol or Luna.",
+      "Optimize this prompt for Claude Opus 5.5.",
       "Optimize this prompt for GPT-5.6.",
       "Optimize this prompt for the specified model."
     ]

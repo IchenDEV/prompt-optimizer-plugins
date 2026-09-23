@@ -1,6 +1,6 @@
 ---
 name: optimize-claude-fable-5-prompts
-description: Clarify and rewrite prompts for Claude Fable 5. Use when optimizing, migrating, debugging, or designing a Fable 5 / Fabel prompt (including Fable/Fabel 提示词优化)—not for Claude Opus 5.
+description: Clarify and rewrite prompts for Claude Fable 5. Use when optimizing, migrating, debugging, or designing a Fable 5 / Fabel prompt (including Fable/Fabel 提示词优化)—not for Claude Opus 5 or Claude Opus 5.5.
 ---
 
 # Optimize Claude Fable 5 Prompts
