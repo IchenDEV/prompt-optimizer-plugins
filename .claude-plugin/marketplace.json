@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "prompt-optimizer-plugins",
-  "version": "3.4.0",
-  "description": "One prompt optimizer plugin for GPT-6 Astra, GPT-5.6, Claude, Gemini, Kimi, GLM, and DeepSeek-V4, including Astra Skills audits.",
+  "version": "3.5.0",
+  "description": "One prompt optimizer plugin for GPT-6 Astra, GPT-6 Sol/Luna, GPT-5.6, Claude, Gemini, Kimi, GLM, and DeepSeek-V4, including Astra Skills audits.",
   "owner": {
     "name": "IchenDEV"
   },
@@ -10,12 +10,14 @@
     {
       "name": "prompt-optimizer",
       "source": "./plugins/prompt-optimizer",
-      "description": "Clarify and optimize prompts with nine bundled Agent Skills.",
+      "description": "Clarify and optimize prompts with ten bundled Agent Skills.",
       "category": "productivity",
       "tags": [
         "prompt-engineering",
         "prompt-optimization",
         "gpt-6-astra",
+        "gpt-6-sol",
+        "gpt-6-luna",
         "gpt-5.6",
         "claude",
         "gemini",

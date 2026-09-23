@@ -20,7 +20,7 @@ This is a concise, dated working summary of OpenAI's official guidance, checked 
 
 ## Behavior patterns to optimize for
 
-Astra is more likely than GPT-5.6 Sol to ask clarifying questions, follow long instructions closely (including skills and `AGENTS.md`), produce detailed formatted prose, under-delegate to subagents relative to some harnesses, and over-verify small coding changes. Tune prompts only for the behaviors that matter to the product.
+Astra is more likely than GPT-6 Sol / GPT-5.6 Sol to ask clarifying questions, follow long instructions closely (including skills and `AGENTS.md`), produce detailed formatted prose, under-delegate to subagents relative to some harnesses, and over-verify small coding changes. Tune prompts only for the behaviors that matter to the product. For Sol/Luna product prompts, use `$optimize-gpt-6-sol-luna-prompts`.
 
 ### Initiative and follow-through
 

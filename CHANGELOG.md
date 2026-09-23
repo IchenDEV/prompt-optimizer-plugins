@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.5.0
+
+- Added `optimize-gpt-6-sol-luna-prompts`, grounded in OpenAI's [Using GPT-6](https://developers.openai.com/api/docs/guides/latest-model) family guide plus the [GPT-6 Sol](https://developers.openai.com/api/docs/models/gpt-6-sol) and [GPT-6 Luna](https://developers.openai.com/api/docs/models/gpt-6-luna) model pages.
+- Covered Sol vs Luna routing (`gpt-6-sol` for complex coding/agentic work, `gpt-6-luna` for efficient high-volume work), `none` reasoning support, Responses vs Chat Completions tool rules, and GPT-5.6 → GPT-6 migration notes (no GPT-6 Terra).
+- Left `optimize-gpt-5-6-prompts` in place for GPT-5.6 workloads.
+- Kept GPT-6 family prompting snippets as evaluate-on-Sol/Luna mitigations rather than Astra-only defaults.
+- Updated portable, Codex, and Claude Code plugin metadata to 3.5.0.
+
 ## 3.4.0
 
 - Rebased `audit-gpt-6-astra-skills` on the official OpenAI Developers blog [Rethinking skills and prompts for GPT-6 Astra](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra) (replacing the prior X Article as the canonical source).

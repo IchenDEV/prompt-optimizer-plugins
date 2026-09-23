@@ -1,6 +1,6 @@
 # Prompt Optimizer
 
-One portable [Agent Plugins 1.0](https://agent-plugins.org/) package with nine bundled prompt and agent-scaffold skills. The same skills work through the portable package, Codex marketplace, and Claude Code marketplace.
+One portable [Agent Plugins 1.0](https://agent-plugins.org/) package with ten bundled prompt and agent-scaffold skills. The same skills work through the portable package, Codex marketplace, and Claude Code marketplace.
 
 ## Included skills
 
@@ -8,6 +8,7 @@ One portable [Agent Plugins 1.0](https://agent-plugins.org/) package with nine b
 | --- | --- | --- | --- |
 | GPT-6 Astra prompts | `optimize-gpt-6-astra-prompts` | `$optimize-gpt-6-astra-prompts` | `/prompt-optimizer:optimize-gpt-6-astra-prompts` |
 | GPT-6 Astra Skills/`AGENTS.md` audit | `audit-gpt-6-astra-skills` | `$audit-gpt-6-astra-skills` | `/prompt-optimizer:audit-gpt-6-astra-skills` |
+| GPT-6 Sol / Luna | `optimize-gpt-6-sol-luna-prompts` | `$optimize-gpt-6-sol-luna-prompts` | `/prompt-optimizer:optimize-gpt-6-sol-luna-prompts` |
 | GPT-5.6 | `optimize-gpt-5-6-prompts` | `$optimize-gpt-5-6-prompts` | `/prompt-optimizer:optimize-gpt-5-6-prompts` |
 | Claude Fable 5 | `optimize-claude-fable-5-prompts` | `$optimize-claude-fable-5-prompts` | `/prompt-optimizer:optimize-claude-fable-5-prompts` |
 | Claude Opus 5 | `optimize-claude-opus-5-prompts` | `$optimize-claude-opus-5-prompts` | `/prompt-optimizer:optimize-claude-opus-5-prompts` |
@@ -20,7 +21,7 @@ Every skill preserves explicit requirements, asks targeted questions only when m
 
 ## Use with an Agent Plugins client
 
-Clone or download this repository, then import `plugins/prompt-optimizer`. It is one self-contained Agent Plugins 1.0 package with a root `plugin.json` and nine immediate children under `skills/`.
+Clone or download this repository, then import `plugins/prompt-optimizer`. It is one self-contained Agent Plugins 1.0 package with a root `plugin.json` and ten immediate children under `skills/`.
 
 Agent Plugins leaves installation and distribution to each client. See the [compatible clients list](https://agent-plugins.org/compatible-clients) and follow your client's local-directory or repository import instructions.
 
@@ -59,7 +60,8 @@ Version 3 replaces the previous one-plugin-per-model layout. Existing users shou
 
 - **GPT-6 Astra prompts:** tunes initiative, instruction priority for skills/`AGENTS.md`, writing style, subagent delegation, decision boundaries, and verification using OpenAI's latest-model guidance.
 - **GPT-6 Astra Skills audit:** subtractively cleans Skills, `AGENTS.md`, and harness scaffolding using OpenAI's [Rethinking skills and prompts for GPT-6 Astra](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra) guidance (short triggers, progressive disclosure, contextual docs, persistence).
-- **GPT-5.6:** produces lean, outcome-first prompts grounded in OpenAI guidance.
+- **GPT-6 Sol / Luna:** produces lean, outcome-first prompts for `gpt-6-sol` (complex coding/agentic) and `gpt-6-luna` (efficient high-volume), with GPT-6 family API migration notes from the latest-model guide.
+- **GPT-5.6:** produces lean, outcome-first prompts grounded in OpenAI GPT-5.6 guidance.
 - **Claude Fable 5:** uses context-rich prompting and targeted clarification grounded in Anthropic guidance.
 - **Claude Opus 5:** optimizes subtractively, removing scaffolding the model no longer needs and adding only observed-behavior controls.
 - **Gemini:** uses direct, consistently delimited prompts, explicit multimodal references, long-context anchoring, and runtime separation grounded in Google AI guidance.
@@ -79,6 +81,7 @@ plugins/prompt-optimizer/
 └── skills/
     ├── optimize-gpt-6-astra-prompts/
     ├── audit-gpt-6-astra-skills/
+    ├── optimize-gpt-6-sol-luna-prompts/
     ├── optimize-gpt-5-6-prompts/
     ├── optimize-claude-fable-5-prompts/
     ├── optimize-claude-opus-5-prompts/
@@ -95,7 +98,7 @@ Nothing depends on paths outside the plugin root, so portable clients and native
 The repository is checked with:
 
 - the official Agent Plugins 1.0 JSON Schema for the portable manifest;
-- the Agent Skills reference validator for all nine skills;
+- the Agent Skills reference validator for all ten skills;
 - the Codex Plugin and Skill validators;
 - `claude plugin validate` for the marketplace and plugin;
 - `git diff --check` and manifest/version consistency checks.
@@ -104,7 +107,9 @@ The repository is checked with:
 
 - [Agent Plugins specification](https://agent-plugins.org/specification)
 - [Agent Skills specification](https://agentskills.io/specification)
-- [Using GPT-6 Astra](https://developers.openai.com/api/docs/guides/latest-model)
+- [Using GPT-6](https://developers.openai.com/api/docs/guides/latest-model)
+- [GPT-6 Sol](https://developers.openai.com/api/docs/models/gpt-6-sol)
+- [GPT-6 Luna](https://developers.openai.com/api/docs/models/gpt-6-luna)
 - [Using GPT-5.6](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)
 - [Rethinking skills and prompts for GPT-6 Astra](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra)
 - [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5)

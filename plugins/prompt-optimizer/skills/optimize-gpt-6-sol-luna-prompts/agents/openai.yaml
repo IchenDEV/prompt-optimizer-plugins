@@ -1,0 +1,4 @@
+interface:
+  display_name: "GPT-6 Sol/Luna Prompt Optimizer"
+  short_description: "Clarify and optimize prompts for GPT-6 Sol and Luna"
+  default_prompt: "Use $optimize-gpt-6-sol-luna-prompts to clarify and optimize this prompt for GPT-6 Sol or Luna."

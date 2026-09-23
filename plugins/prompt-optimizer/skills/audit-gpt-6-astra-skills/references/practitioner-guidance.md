@@ -104,7 +104,7 @@ Keep boundaries for irreversible or external actions. Soften or remove blanket a
 
 ## Persistence and completion
 
-Compared with GPT-5.6 Sol, Astra may feel more tentative: it may return after a first implementation for review while work remains.
+Compared with GPT-6 Sol / GPT-5.6 Sol, Astra may feel more tentative: it may return after a first implementation for review while work remains.
 
 - Define completion before starting when the task includes getting work running, inspecting results, and fixing failures.
 - A requirement to stop for review after the first implementation pulls the model toward an earlier stopping point—keep it only if you actually want that checkpoint.
