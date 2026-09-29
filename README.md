@@ -1,6 +1,6 @@
 # Prompt Optimizer
 
-One portable [Agent Plugins 1.0](https://agent-plugins.org/) package with nine bundled prompt and agent-scaffold skills. The same skills work through the portable package, Codex marketplace, and Claude Code marketplace.
+One portable [Agent Plugins 1.0](https://agent-plugins.org/) package with eleven bundled prompt, model-selection, and agent-scaffold skills. The same skills work through the portable package, Codex marketplace, and Claude Code marketplace.
 
 ## Included skills
 
@@ -11,6 +11,8 @@ One portable [Agent Plugins 1.0](https://agent-plugins.org/) package with nine b
 | GPT-5.6 | `optimize-gpt-5-6-prompts` | `$optimize-gpt-5-6-prompts` | `/prompt-optimizer:optimize-gpt-5-6-prompts` |
 | Claude Fable 5 | `optimize-claude-fable-5-prompts` | `$optimize-claude-fable-5-prompts` | `/prompt-optimizer:optimize-claude-fable-5-prompts` |
 | Claude Opus 5 | `optimize-claude-opus-5-prompts` | `$optimize-claude-opus-5-prompts` | `/prompt-optimizer:optimize-claude-opus-5-prompts` |
+| Claude Sonnet 5.5 | `optimize-claude-sonnet-5-5-prompts` | `$optimize-claude-sonnet-5-5-prompts` | `/prompt-optimizer:optimize-claude-sonnet-5-5-prompts` |
+| Claude model selection / multi-agent | `select-claude-models` | `$select-claude-models` | `/prompt-optimizer:select-claude-models` |
 | Gemini | `optimize-gemini-prompts` | `$optimize-gemini-prompts` | `/prompt-optimizer:optimize-gemini-prompts` |
 | Kimi | `optimize-kimi-prompts` | `$optimize-kimi-prompts` | `/prompt-optimizer:optimize-kimi-prompts` |
 | GLM | `optimize-glm-prompts` | `$optimize-glm-prompts` | `/prompt-optimizer:optimize-glm-prompts` |
@@ -20,7 +22,7 @@ Every skill preserves explicit requirements, asks targeted questions only when m
 
 ## Use with an Agent Plugins client
 
-Clone or download this repository, then import `plugins/prompt-optimizer`. It is one self-contained Agent Plugins 1.0 package with a root `plugin.json` and nine immediate children under `skills/`.
+Clone or download this repository, then import `plugins/prompt-optimizer`. It is one self-contained Agent Plugins 1.0 package with a root `plugin.json` and eleven immediate children under `skills/`.
 
 Agent Plugins leaves installation and distribution to each client. See the [compatible clients list](https://agent-plugins.org/compatible-clients) and follow your client's local-directory or repository import instructions.
 
@@ -62,6 +64,8 @@ Version 3 replaces the previous one-plugin-per-model layout. Existing users shou
 - **GPT-5.6:** produces lean, outcome-first prompts grounded in OpenAI guidance.
 - **Claude Fable 5:** uses context-rich prompting and targeted clarification grounded in Anthropic guidance.
 - **Claude Opus 5:** optimizes subtractively, removing scaffolding the model no longer needs and adding only observed-behavior controls.
+- **Claude Sonnet 5.5:** calibrates effort, initiative/scope, `between_tools` thinking, verification, progress updates, and tool-use nudges from Anthropic's Sonnet 5.5 guides.
+- **Claude model selection:** recommends single-model and multi-agent maps, defaulting to Opus 5.5 for judgment and Sonnet 5.5 for execution (advisor strategy).
 - **Gemini:** uses direct, consistently delimited prompts, explicit multimodal references, long-context anchoring, and runtime separation grounded in Google AI guidance.
 - **Kimi:** emphasizes concrete context, input delimiters, reference-grounded fallbacks, and staged handling of long inputs.
 - **GLM:** preserves system/user boundaries and uses parseable output contracts, references, examples, and decomposition where needed.
@@ -82,6 +86,8 @@ plugins/prompt-optimizer/
     ├── optimize-gpt-5-6-prompts/
     ├── optimize-claude-fable-5-prompts/
     ├── optimize-claude-opus-5-prompts/
+    ├── optimize-claude-sonnet-5-5-prompts/
+    ├── select-claude-models/
     ├── optimize-gemini-prompts/
     ├── optimize-kimi-prompts/
     ├── optimize-glm-prompts/
@@ -95,7 +101,7 @@ Nothing depends on paths outside the plugin root, so portable clients and native
 The repository is checked with:
 
 - the official Agent Plugins 1.0 JSON Schema for the portable manifest;
-- the Agent Skills reference validator for all nine skills;
+- the Agent Skills reference validator for all eleven skills;
 - the Codex Plugin and Skill validators;
 - `claude plugin validate` for the marketplace and plugin;
 - `git diff --check` and manifest/version consistency checks.
@@ -109,6 +115,10 @@ The repository is checked with:
 - [Rethinking skills and prompts for GPT-6 Astra](https://x.com/pvncher/status/2095991462416490862) (@pvncher)
 - [Prompting Claude Fable 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5)
 - [Prompting Claude Opus 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5)
+- [Prompting Claude Sonnet 5.5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5)
+- [Building with Claude Sonnet 5.5](https://claude.dev/blog/building-with-claude-sonnet-5-5/)
+- [Choosing the right model](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model)
+- [Advisor tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool)
 - [Gemini prompt design strategies](https://ai.google.dev/gemini-api/docs/prompting-strategies)
 - [Kimi API: Prompt best practices](https://platform.kimi.com/docs/guide/prompt-best-practice)
 - [Zhipu AI: Prompt engineering](https://docs.bigmodel.cn/cn/guide/platform/prompt)

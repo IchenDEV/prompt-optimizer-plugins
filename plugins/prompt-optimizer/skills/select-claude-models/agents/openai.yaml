@@ -1,0 +1,4 @@
+interface:
+  display_name: "Claude Model Selection Guide"
+  short_description: "Choose Claude models and Opus/Sonnet multi-agent pairings"
+  default_prompt: "Use $select-claude-models to recommend Claude models and a multi-agent Opus/Sonnet role map for this workload."

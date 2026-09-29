@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.4.0
+
+- Added `optimize-claude-sonnet-5-5-prompts`, grounded in Anthropic's [Prompting Claude Sonnet 5.5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5), [Building with Claude Sonnet 5.5](https://claude.dev/blog/building-with-claude-sonnet-5-5/), and the [Sonnet 5.5 migration guide](https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide).
+- Covered Sonnet 5.5 effort recalibration, initiative/scope steering, `between_tools` thinking, JSON reasoning accuracy, progress updates, low-effort verification, tool-use nudges, mid-turn message placement, and refusal handling.
+- Added `select-claude-models` for Claude model selection and multi-agent routing, with the default **Opus 想，Sonnet 干活** advisor pattern (`claude-opus-5-5` advisor + `claude-sonnet-5-5` executor) plus the orchestrator-worker alternative.
+- Updated the portable, Codex, and Claude Code plugin metadata for eleven bundled skills.
+
 ## 3.3.0
 
 - Added `audit-gpt-6-astra-skills`, grounded in Eric Provencher's [Rethinking skills and prompts for GPT-6 Astra](https://x.com/pvncher/status/2095991462416490862) practitioner guidance.

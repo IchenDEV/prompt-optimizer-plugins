@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "prompt-optimizer",
-  "version": "3.3.0",
-  "description": "Clarify and optimize prompts for GPT-6 Astra, GPT-5.6, Claude, Gemini, Kimi, GLM, and DeepSeek-V4, plus Astra Skills/AGENTS.md audits.",
+  "version": "3.4.0",
+  "description": "Clarify and optimize prompts for GPT-6 Astra, GPT-5.6, Claude Sonnet/Opus/Fable, Gemini, Kimi, GLM, and DeepSeek-V4, plus Claude model selection and Astra Skills/AGENTS.md audits.",
   "author": {
     "name": "IchenDEV",
     "url": "https://github.com/IchenDEV"
@@ -16,6 +16,7 @@
     "gpt-6-astra",
     "gpt-5.6",
     "claude",
+    "claude-sonnet-5-5",
     "gemini",
     "kimi",
     "glm",
