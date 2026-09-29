@@ -1,6 +1,6 @@
 ---
 name: optimize-claude-sonnet-5-5-prompts
-description: Clarify, audit, and rewrite rough or existing prompts for Claude Sonnet 5.5 using Anthropic's official prompting guidance. Use when a user asks to optimize, improve, migrate, debug, or design a prompt, system prompt, or agent harness for Claude Sonnet 5.5 (claude-sonnet-5-5), including requests phrased as Sonnet 5.5 prompt optimization, Sonnet 5.5 提示词优化, migrating a Claude Sonnet 5 prompt, or tuning Sonnet 5.5 behavior such as effort, initiative and scope, between_tools thinking, JSON reasoning accuracy, progress updates, verification at low effort, tool-use under-calling, mid-turn message handling, or safeguard refusals. Ask only for missing information that would materially change the result; otherwise preserve intent and return a lean, copy-ready prompt.
+description: Clarify and rewrite prompts or agent harnesses for Claude Sonnet 5.5 (claude-sonnet-5-5). Use when optimizing, migrating from Sonnet 5, or tuning Sonnet 5.5 behaviors such as effort, initiative/scope, between_tools, JSON accuracy, progress updates, or low-effort verification (including Sonnet 5.5 提示词优化)—not for Opus/Fable prompt rewrites or bare model picking (use select-claude-models).
 ---
 
 # Optimize Claude Sonnet 5.5 Prompts

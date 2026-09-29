@@ -1,6 +1,6 @@
 ---
 name: optimize-glm-prompts
-description: Clarify, audit, and rewrite rough or existing prompts for the GLM language-model family using Zhipu AI's official prompt-engineering guidance. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a GLM prompt, including requests phrased as GLM 提示词优化 or 智谱提示词优化, or when an underspecified GLM prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a clear prompt with appropriate system behavior, input boundaries, grounding, structured-output rules, and completion criteria.
+description: Clarify and rewrite prompts for the GLM / 智谱 model family. Use when optimizing, debugging, migrating, or designing a GLM prompt (including GLM 提示词优化 or 智谱提示词优化).
 ---
 
 # Optimize GLM Prompts

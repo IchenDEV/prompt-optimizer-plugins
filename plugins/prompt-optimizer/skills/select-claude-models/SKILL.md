@@ -1,6 +1,6 @@
 ---
 name: select-claude-models
-description: Recommend Claude model choices and multi-agent pairings from Anthropic's official selection guidance. Use when a user asks which Claude model to pick, how to split Opus and Sonnet across agents, Opus 想 / Sonnet 干活, planner-executor or advisor-executor setups, cost-versus-intelligence routing, or whether a task belongs on Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable, or Haiku. Also use for Claude 5.5 family model selection, multi-agent model routing, and advisor-tool pairing questions. Ask only for missing workload facts that would change the recommendation; otherwise return a concrete model map with runtime notes kept separate from prompt text.
+description: Recommend Claude model choices and multi-agent pairings (Opus 想 / Sonnet 干活, advisor-executor, orchestrator-worker). Use when picking among Opus 5.5, Sonnet 5.5, Fable, or Haiku, or designing Claude cost-versus-intelligence routing—not for rewriting a single model's prompt text.
 ---
 
 # Select Claude Models

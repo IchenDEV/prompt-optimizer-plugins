@@ -1,6 +1,6 @@
 ---
 name: optimize-gemini-prompts
-description: Clarify, audit, and rewrite rough or existing prompts for the Gemini model family using Google AI's official prompt design strategies. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a Gemini prompt, including requests phrased as Gemini 提示词优化, or when an underspecified Gemini prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a direct, consistently structured prompt with clear input boundaries, output requirements, grounding rules, multimodal references, and completion criteria where relevant.
+description: Clarify and rewrite prompts for the Gemini model family. Use when optimizing, debugging, migrating, or designing a Gemini prompt (including Gemini 提示词优化), especially multimodal or long-context cases.
 ---
 
 # Optimize Gemini Prompts

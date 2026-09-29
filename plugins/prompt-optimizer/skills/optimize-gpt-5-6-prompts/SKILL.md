@@ -1,6 +1,6 @@
 ---
 name: optimize-gpt-5-6-prompts
-description: Clarify, audit, and rewrite rough or existing prompts for GPT-5.6 Sol and the GPT-5.6 family using OpenAI's official prompting guidance. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a GPT-5.6 prompt, including requests phrased as GPT-5.6 提示词优化, or when an underspecified prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a lean, outcome-first prompt with explicit constraints, output requirements, and completion criteria.
+description: Clarify and rewrite prompts for GPT-5.6 Sol and the GPT-5.6 family. Use when optimizing, debugging, migrating, or designing a GPT-5.6 prompt (including GPT-5.6 提示词优化)—not for GPT-6 Astra (use optimize-gpt-6-astra-prompts or audit-gpt-6-astra-skills).
 ---
 
 # Optimize GPT-5.6 Prompts

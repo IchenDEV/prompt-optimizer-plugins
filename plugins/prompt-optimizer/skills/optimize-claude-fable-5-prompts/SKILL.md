@@ -1,6 +1,6 @@
 ---
 name: optimize-claude-fable-5-prompts
-description: Clarify, audit, and rewrite rough or existing prompts for Claude Fable 5 using Anthropic's official prompting guidance. Use when a user asks to optimize, improve, migrate, debug, or design a prompt for Claude Fable 5, including requests phrased as Fable or Fabel prompt optimization, Fable/Fabel 提示词优化, or when an underspecified idea needs guided clarification before a copy-ready prompt. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a lean, context-rich prompt with explicit outcomes, boundaries, evidence, output requirements, and completion criteria.
+description: Clarify and rewrite prompts for Claude Fable 5. Use when optimizing, migrating, debugging, or designing a Fable 5 / Fabel prompt (including Fable/Fabel 提示词优化)—not for Claude Opus 5.
 ---
 
 # Optimize Claude Fable 5 Prompts

@@ -1,6 +1,6 @@
 {
   "name": "prompt-optimizer",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "Clarify and optimize prompts for GPT-6 Astra, GPT-5.6, Claude Sonnet/Opus/Fable, Gemini, Kimi, GLM, and DeepSeek-V4, plus Claude model selection and Astra Skills/AGENTS.md audits.",
   "author": {
     "name": "IchenDEV",

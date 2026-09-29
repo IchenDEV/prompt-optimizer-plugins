@@ -1,6 +1,6 @@
 ---
 name: optimize-kimi-prompts
-description: Clarify, audit, and rewrite rough or existing prompts for the Kimi model family using Moonshot AI's official prompt best practices. Use when a user asks to optimize, improve, rewrite, debug, migrate, or design a Kimi prompt, including requests phrased as Kimi 提示词优化, or when an underspecified Kimi prompt needs guided clarification before a copy-ready rewrite. Ask only for missing information that would materially change the result; otherwise preserve intent and produce a clear prompt with explicit context, input boundaries, output requirements, reference-grounding rules, and completion criteria.
+description: Clarify and rewrite prompts for the Kimi model family. Use when optimizing, debugging, migrating, or designing a Kimi prompt (including Kimi 提示词优化).
 ---
 
 # Optimize Kimi Prompts
