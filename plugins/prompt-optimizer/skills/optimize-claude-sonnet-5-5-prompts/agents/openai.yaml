@@ -1,0 +1,4 @@
+interface:
+  display_name: "Claude Sonnet 5.5 Prompt Optimizer"
+  short_description: "Clarify and optimize prompts for Claude Sonnet 5.5"
+  default_prompt: "Use $optimize-claude-sonnet-5-5-prompts to clarify and optimize this prompt for Claude Sonnet 5.5."
